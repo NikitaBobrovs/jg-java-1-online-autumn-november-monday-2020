@@ -1,14 +1,13 @@
-# JavaGuru: Java 1 Online - Autumn - November - Monday - Course Group Repository
+## JavaGuru: Java 1 Online - Autumn - November - Monday - Course Group Repository
 
-Welcome! 👋
-This document contains the most important information regarding course.
+Welcome! 👋 This document contains the most important information regarding course.
 
-## Prerequisites ☝️
-
+### Prerequisites
+***
 A power of will and computer! 😉
 
-### Required Tools ⚙️
-
+### Toolbox
+***
 During the course we extensively use the following software:
  
 * **[Intellij IDEA: Community Edition](https://www.jetbrains.com/idea/)** - Widely used integrated development environment that helps us to write and run **Java** source code
@@ -25,12 +24,8 @@ During the course we extensively use the following software:
   * ⚠️ *Note:* Highly recommended installing JDK via **Intellij IDEA** to avoid complex and inconvenient manual setup process
   * [[Download](https://adoptopenjdk.net)]
 
-## Guidelines 📖
-
-Make sure to follow our guidelines! 😌
-
-### Homework Submission Workflow ⤴️
-
+### Homework Submission Workflow
+***
 It is required to submit a solved assignment exercises and problems throughout the course in order to receive a certificate of completion.
 Since a repository shared between students, please refer to the following homework submission workflow.
 
@@ -50,7 +45,7 @@ To create a package, right click on the *java* folder and select `New > Package`
 
 4. `VCS > Commit > Commit and Push...`
 
-### Homework Review Workflow 🔁
+### Homework Review Workflow
 
 Each solution reviewed personally and is either accepted or rejected.
 
@@ -59,17 +54,17 @@ Each solution reviewed personally and is either accepted or rejected.
   * `//Resolution: ACCEPTED` - In case solution accepted
   * `//Resolution: SEEN` - In case solution rejected and requires additional improvements or fixes
 
-## Resources 🤓
+## Resources
 
 Use additional knowledge sources to strengthen the result! 🤩
 
-### Lessons 📹
+### Lessons
 
 Course lessons recorded and available for review:
 
 * [Lesson 0](https://www.youtube.com/watch?v=T6M7OfFySaE)
 
-### Books 📚
+### Books
 
 Highly recommended for reading:
 
@@ -84,7 +79,7 @@ Highly recommended for reading:
 * [Head First Object-Oriented Analysis and Design](https://isbnsearch.org/isbn/9780596008673)
 * [Head First Software Development](https://isbnsearch.org/isbn/9780596527358)
 
-### External Practice 🧠
+### External Practice
 
 In case you look for additional programming brain teasers, feel free to dive into:
 
