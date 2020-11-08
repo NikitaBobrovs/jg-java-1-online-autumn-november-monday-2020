@@ -24,10 +24,9 @@ A power of will and computer! 😉
   * ⚠️ *Note:* Highly recommended installing JDK via **Intellij IDEA** to avoid complex and inconvenient manual setup process
   * [[Download](https://adoptopenjdk.net)]
 
-
 ## Certificate of Completion
 
-A Certificate of Completion will be issued to students upon their successful fulfilment of course requirements. To have successfully completed a course means the student has passed the **easy** course assessment.
+A Certificate of Completion will be issued to students upon their successful fulfilment of course requirements. To have successfully completed a course means the student has passed the **beginner** course assessment.
 
 ## Homework Submission Workflow
 
