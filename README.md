@@ -62,6 +62,7 @@ Each solution reviewed personally and is either accepted or rejected.
 
 * [Lesson 0](https://www.youtube.com/watch?v=T6M7OfFySaE)
 * [Lesson 1](https://www.youtube.com/watch?v=MQbIMR6Suw0)
+* [Lesson 2](https://www.youtube.com/watch?v=lVilldkwE6c)
 
 ## Books
 
