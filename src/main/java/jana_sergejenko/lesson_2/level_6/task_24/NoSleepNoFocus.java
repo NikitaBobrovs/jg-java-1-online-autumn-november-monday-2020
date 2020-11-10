@@ -1,4 +1,4 @@
-package students_jana_sergejenko_lesson2_level_6_task_24;
+package jana_sergejenko.lesson_2.level_6.task_24;
 
 class NoSleepNoFocus {
     public static void main(String[] args) {
