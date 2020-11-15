@@ -28,40 +28,24 @@ A power of will and computer! 😉
 
 A Certificate of Completion will be issued to students upon their successful fulfilment of course requirements. To have successfully completed a course means the student has passed the **beginner** course assessment.
 
-## Homework Submission Workflow
+## Homework Submission
 
-It is required to submit a solved assignment exercises and problems throughout the course in order to receive a certificate of completion.
-Since a repository shared between students, please refer to the following homework submission workflow.
+Please, follow next steps in order to publish your homework for personal review:
+1. Before you start, make sure you are in the `master` branch. Go to `VCS > Git > Branches... > Remote Branches: origin/master` and select checkout.
+2. Update your local master copy with latest changes via `VCS > Update Project` menu option. Select `Merge incoming changes into the current branch` option.
+3. Create a branch where isolated development will occur by `VCS > Git > Branches... > + New Branch` and naming it after your name and assignment, e.g. `st-john-doe-lesson-2-level-3`. It can be viewed as your homework solution draft.
+4. Stage files to be uploaded by right clicking on the single file or package and `Git > + Add`. After that your file(s) name should turn green from red. This step can be ignored in case it is staged automatically and file(s) are green already.
+5. Save your project state by comitting source code via `VCS > Commit`. Select all files to be uploaded and write a meaningful changes description.
+6. Press `Commit and Push` button and confirm it afterwards.
+7. Create [pull request](https://github.com/konstantins-buts/jg-java-1-online-autumn-november-monday-2020/compare) by selecting your branch name, e.g. `st-john-doe-lesson-2-level-3`, in `compare:` dropdown.
+8. In case solution is accepted, there is nothing you need to do, it will be merged into `master` branch by your instructor. Otherwise, consider review comments, fix your code and go to step 4.
 
-**Initial** steps to take (should be done **once per course** ⚠️):
-1. `VCS > Update Project > Merge incoming changes in the current branch` - to make sure your project is up-to-date with repository
-2. `VCS > Git > Branches... > + New Branch` with branch name `student-name-surname`, e.g. `student-ivans-ivanovs` - to create your personal working branch
-
-👉 After that, please create your own **package** `name_surname`, e.g. `ivans_ivanovs`, in the `src/main/java/students` folder.
-To create a package, right click on the *java* folder and select `New > Package`.
-
-**Subsequent** steps to take (should be done **before every submission** ⚠️):
-1. `VCS > Update Project > Merge incoming changes into the current branch`
-2. `VCS > Git > Branches... > Local Branches: Master > Update`
-3. `VCS > Git > Branches... > Local Branches: Master > Merge into current`
-
-👉 After that, in your own package, create package after lesson name and level `lesson_n/level_n/task_n`, e.g. `lesson_2/level_1/task_1`. Create text files or java classes with solution as needed.
-
-4. `VCS > Commit > Commit and Push...`
-
-## Homework Review Workflow
-
-Each solution reviewed personally and is either accepted or rejected.
-
-* The comments will appear if there are any remarks or suggestions
-* Homework evaluation will be visible at the top of a document with comment:
-  * `//Resolution: ACCEPTED` - In case solution accepted
-  * `//Resolution: SEEN` - In case solution rejected and requires additional improvements or fixes
 
 ## Lesson History
 
 * [Lesson 0](https://www.youtube.com/watch?v=T6M7OfFySaE)
 * [Lesson 1](https://www.youtube.com/watch?v=MQbIMR6Suw0)
+* [Lesson 2](https://www.youtube.com/watch?v=lVilldkwE6c)
 
 ## Books
 
