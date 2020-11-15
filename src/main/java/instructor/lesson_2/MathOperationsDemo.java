@@ -9,5 +9,7 @@ public class MathOperationsDemo {
 
         int sum = x + y;
 
+        System.out.println(sum);
+
     }
 }
