@@ -1,8 +1,8 @@
-package students.jekaterina_aleksejeva.lesson_2.level_3;
+package students.jekaterina_aleksejeva.lesson_2.level_3.task9;
 
 import java.util.Scanner;
 
-public class task9 {
+public class Task9 {
     public static void main(String[] args) {
         System.out.println("Test Data: ");
         Scanner scanner = new Scanner(System.in);

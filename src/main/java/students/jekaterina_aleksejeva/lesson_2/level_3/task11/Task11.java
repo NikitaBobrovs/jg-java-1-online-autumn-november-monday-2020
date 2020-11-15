@@ -2,7 +2,7 @@ package students.jekaterina_aleksejeva.lesson_2.level_3.task11;
 
 import java.util.Scanner;
 
-public class task11 {
+public class Task11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter integer 1: ");
