@@ -2,7 +2,7 @@ package students.jekaterina_aleksejeva.lesson_2.level_3.task10;
 
 import java.util.Scanner;
 
-public class task10 {
+public class Task10 {
     public static void main(String[] args) {
         System.out.println("Test Data:");
         System.out.println("Enter cycle radius: ");
