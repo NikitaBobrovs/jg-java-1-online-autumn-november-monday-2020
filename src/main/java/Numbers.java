@@ -2,7 +2,7 @@ public class Numbers {
     public static void main (String [] args){
 
         Scanner scan = new Scanner(System.in);
-        System.out.print("first number ");
+        System.out.println ("first number ");
         int firstNumber = scanner.nextInt();
 
         System.out.print("second number ");
@@ -13,10 +13,10 @@ public class Numbers {
         int multiplication = (firstNumber * secondNumber);
         int division = (firstNumber / secondNumber);
 
-        System.out.print = ("Sum result :" + sum);
-        System.out.print = ("Subtraction result :" + subtraction);
-        System.out.print = ("Multiplication result :" + multiplication);
-        System.out.print = ("Division result :" + division);
+        System.out.println ("Sum result :" + sum);
+        System.out.println ("Subtraction result :" + subtraction);
+        System.out.println ("Multiplication result :" + multiplication);
+        System.out.println ("Division result :" + division);
     }
 }
 
