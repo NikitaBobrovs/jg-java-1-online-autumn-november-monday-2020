@@ -5,19 +5,28 @@ class Product {
     double regularPrice;
     double discount;
 
-    Product(String name, double regularPrice, double discount){
+    Product(String name, double regularPrice, double discount) {
         this.name = name;
         this.regularPrice = regularPrice;
         this.discount = discount;
     }
 
-    double actualPrice(){
-        return regularPrice-(regularPrice*discount/100);
+    Product(String name) {
+        this.name = name;
     }
 
-    void printInformation(){
+    Product(String name, double regularPrice) {
+        this.name = name;
+        this.regularPrice = regularPrice;
+    }
+
+    double actualPrice() {
+        return regularPrice - (regularPrice * discount / 100);
+    }
+
+    void printInformation() {
         System.out.println("Product: " + name + "\n"
-        + "Regular price: " + regularPrice + "\n"
-        + "After " + discount + "% discount: " + String.format("%.2f", actualPrice()));
+                + "Regular price: " + String.format("%.2f", regularPrice)  + "\n"
+                + "After " + discount + "% discount: " + String.format("%.2f", actualPrice()));
     }
 }
