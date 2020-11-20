@@ -1,4 +1,4 @@
-package students.polina_ivashkevich.lesson_3.task_9;
+package students.polina_ivashkevich.lesson_3.level_2.task_7.task_9;
 
 import java.util.Scanner;
 
