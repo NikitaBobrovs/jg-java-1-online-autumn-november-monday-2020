@@ -2,16 +2,13 @@ package students.nikita_bobrovs.lesson_3.level_7.task_30;
 
 public class Circle {
     double radius;
-    double area;
 
-    Circle(double getRadius){
-        this.radius = getRadius;
+    Circle(double radius){
+        this.radius = radius;
     }
     void calculateArea(){
-        this.area = radius*radius*Math.PI;
         System.out.println("Entered radius = "+radius);
-        System.out.println("Area of this circle is "+area);
-    }
+        System.out.println("Area of this circle is "+radius*radius*Math.PI);}
 }
 
 class CircleDemo{
