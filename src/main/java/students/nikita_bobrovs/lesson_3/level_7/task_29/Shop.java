@@ -5,21 +5,21 @@ public class Shop {
     String productCategory;
     double area;
 
-    Shop(String getShopName,String getProductCategory,double getShopArea){
-        this.name = getShopName;
-        this.productCategory = getProductCategory;
-        this.area = getShopArea;
+    Shop(String name,String productCategory,double area){
+        this.name = name;
+        this.productCategory = productCategory;
+        this.area = area;
     }
-    void changeName(String getNewName){
-        this.name = getNewName;
+    void changeName(String changeName){
+        this.name = changeName;
     }
-    void changeCategory(String getNewCategory){
-        this.productCategory = getNewCategory;
+    void changeCategory(String changeCategory){
+        this.productCategory = changeCategory;
     }
-    void changeArea(double getNewArea){
-        this.area =getNewArea;
+    void changeArea(double changeArea){
+        this.area = changeArea;
     }
-    void getInfo(){
+    void printInfo(){
         System.out.println(this.name+" is a "+this.productCategory+" shop with area of "+this.area+" square meters.");
     }
 }
@@ -28,12 +28,12 @@ public class Shop {
 class ShopDemo{
     public static void main(String[] args) {
         Shop firstShop = new Shop("Maxima","product",4500.5);
-        firstShop.getInfo();
+        firstShop.printInfo();
         System.out.println();
 
         firstShop.changeName("Depo");
         firstShop.changeCategory("construction material");
         firstShop.changeArea(3000.80);
-        firstShop.getInfo();
+        firstShop.printInfo();
     }
 }
