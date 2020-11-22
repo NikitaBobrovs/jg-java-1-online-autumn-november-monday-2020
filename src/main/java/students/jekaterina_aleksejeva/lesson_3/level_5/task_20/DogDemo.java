@@ -4,7 +4,7 @@ class DogDemo {
     public static void main(String[] args) {
 
         Dog myDog = new Dog("Trezor",2);
-        myDog.getDogVoice();
+        myDog.voice();
         myDog.happyBirthday();
     }
 }

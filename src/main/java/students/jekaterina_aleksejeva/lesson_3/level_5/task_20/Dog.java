@@ -10,7 +10,7 @@ class Dog {
         this.age = age;
     }
 
-    public void getDogVoice () {
+    public void voice () {
 
         System.out.println("My name is " + name + "!" + "I am " + age + " years old!");
     }
