@@ -1,25 +1,26 @@
 package students.jekaterina_aleksejeva.lesson_3.level_5.task_22;
 
 class Dog {
-    String dogName;
-    Integer dogAge;
-    String dogColour;
+    String name;
+    Integer age;
+    String colour;
 
-    Dog(String dogName, Integer dogAge, String dogColour)
+    Dog(String name, Integer age, String colour)
     {
-        this.dogName = dogName;
-        this.dogAge = dogAge;
-        this.dogColour = dogColour;
+        this.name = name;
+        this.age = age;
+        this.colour = colour;
     }
 
-    public void getDogVoice () {
-        System.out.println("My name is " + dogName + " and I am " + dogAge + " years old!");
-        System.out.println("My colour: " + dogColour);
+    public void voice () {
+        System.out.println("My name is " + name + " and I am " + age + " years old!");
+        System.out.println("My colour: " + colour);
     }
 
-    void changeColor(String newColor) {
-        this.dogColour = newColor;
-        System.out.println("My name is " + dogName + " and I am " + dogAge + " years old!");
-        System.out.println("My new colour: " + dogColour);
+    void changeColor(String newColour) {
+        this.colour = newColour;
+        System.out.println("My name is " + name + " and I am " + age + " years old!");
+        System.out.println("My new colour: " + newColour);
     }
 }
+
