@@ -1,4 +1,4 @@
-package students.darja.fedosova.lessons_2.level_2.task_7;
+package students.darja_fedosova.lessons_2.level_2.task_7;
 
 public class LoginService {
     public static void main(String[] args) {
