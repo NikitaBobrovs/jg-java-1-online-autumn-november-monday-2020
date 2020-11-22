@@ -4,7 +4,7 @@ class DogDemo {
     public static void main(String[] args) {
 
         Dog myDog = new Dog("Trezor",2, "grey");
-        myDog.getDogVoice();
+        myDog.voice();
         myDog.changeColor("white");
 
     }
