@@ -1,31 +1,22 @@
 package students.jekaterina_aleksejeva.lesson_3.level_5.task_18;
 
 class Dog {
-    String dogName;
-    String dogVoice;
+    String name;
 
-    Dog(String dogName, String dogVoice)
+    Dog(String name)
     {
-        this.dogName = dogName;
-        this.dogVoice = dogVoice;
+        this.name = name;
     }
-    String getDogName()
-    {
-        return this.dogName;
-    }
-    String getDogVoice()
-    {
-        return this.dogVoice;
-    }
+
+   void voice() {
+       System.out.println( this.name + "! " + this.name +"! " + this.name + "! ");
+   }
 }
 
 class DogDemo {
 
     public static void main(String[] args) {
-        Dog myDog = new Dog("Trezor","Trezor! Trezor! Trezor!");
-        String dogName = myDog.getDogName();
-        String dogVoice = myDog.getDogVoice();
-        System.out.println("Voice! " + dogVoice);
+        Dog myDog = new Dog("Trezor");
+        myDog.voice();
     }
-
 }
