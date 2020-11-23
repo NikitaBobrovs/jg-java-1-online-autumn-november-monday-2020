@@ -6,14 +6,15 @@ public class Circle {
     Circle(double radius){
         this.radius = radius;
     }
-    void calculateArea(){
-        System.out.println("Entered radius = "+radius);
-        System.out.println("Area of this circle is "+radius*radius*Math.PI);}
+    double calculateArea(){
+        return radius*radius*Math.PI;
+        }
 }
 
 class CircleDemo{
     public static void main(String[] args) {
         Circle testCircle = new Circle(4);
         testCircle.calculateArea();
+        System.out.println("Radius is :"+testCircle.calculateArea());
     }
 }
