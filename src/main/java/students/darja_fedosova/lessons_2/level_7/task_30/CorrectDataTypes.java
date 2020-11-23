@@ -4,12 +4,12 @@ public class CorrectDataTypes {
     public static void main(String[] args) {
 
         int numberOne = 10;
-        long numberTwo = 20L;
+        double numberTwo = 20L;
 
         System.out.println("Number 1 = " + numberOne);
         System.out.println("Number 2 = " + numberTwo);
 
-        long sum = numberOne + numberTwo;
+       double sum = numberOne + numberTwo;
 
         System.out.println("Sum = " + sum);
     }
