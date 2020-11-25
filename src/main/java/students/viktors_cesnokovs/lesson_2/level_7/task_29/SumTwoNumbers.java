@@ -10,5 +10,4 @@ public class SumTwoNumbers {
         int sum = numberOne + numberTwo;
         System.out.println("Sum = " + sum);
     }
-
 }
