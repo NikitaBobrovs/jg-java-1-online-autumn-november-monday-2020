@@ -1,26 +1,26 @@
 package students.jekaterina_aleksejeva.lesson_3.level_5.task_19;
 
 class Dog {
-    String dogName;
-    Integer dogAge;
+    String name;
+    Integer age;
 
-    Dog(String dogName, Integer dogAge)
+    Dog(String name, Integer age)
     {
-        this.dogName = dogName;
-        this.dogAge = dogAge;
+        this.name = name;
+        this.age = age;
     }
-    public void getDogVoice () {
-        System.out.println("My name is " + dogName + "!" + "I am " + dogAge + " years old!");
-    }
+    public void voice () {
 
+        System.out.println("My name is " + name + "!" + " I am " + age + " years old!");
+    }
 }
 
 class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog myDog = new Dog("Trezor",2);
-        myDog.getDogVoice();
+        Dog myDog = new Dog ("Trezor", 2);
+        myDog.voice();
     }
 }
 
