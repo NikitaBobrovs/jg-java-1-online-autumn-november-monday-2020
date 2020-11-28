@@ -6,10 +6,9 @@ public class Product {
     double discount = 30;
     double actualPrice;
 
-    public void actualPrice() {
-        System.out.println("Актуальная цена, с учетом скидки $ :");
-        actualPrice=regularPrice*discount/100;
-        System.out.println(name +" $ " +actualPrice );
+    public double actualPrice() {
+        return  actualPrice=regularPrice*discount/100;
+
 
 
     } public void printInformation() {
