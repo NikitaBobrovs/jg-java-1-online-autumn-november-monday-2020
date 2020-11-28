@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class HelloName {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Your Name");
+        System.out.println("Aleksandr");
         String s = scanner.nextLine();
-        System.out.println("Hello - " +s);
+        System.out.println("Hello - Aleksandr" +s);
 
 
     }
