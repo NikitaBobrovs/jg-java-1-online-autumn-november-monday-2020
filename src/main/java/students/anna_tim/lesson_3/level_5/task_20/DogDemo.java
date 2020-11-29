@@ -1,6 +1,6 @@
 package students.anna_tim.lesson_3.level_5.task_20;
 
-public class DogDemo {
+class DogDemo {
     public static void main(String[] args) {
         Dog myDog = new Dog("Rex", 7);
         String dogName = myDog.getDogName();
