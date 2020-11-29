@@ -10,7 +10,8 @@ public class Robot {
     }
     //task5
     public void sayYourName() {
-        System.out.println("MyNameIs ROBO");
+        System.out.println("MyNameIs ROBO"); }
 
-    }
-}
+        }
+
+
