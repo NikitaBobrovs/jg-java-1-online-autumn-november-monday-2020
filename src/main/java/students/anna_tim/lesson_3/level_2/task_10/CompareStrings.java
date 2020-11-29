@@ -1,6 +1,6 @@
 package students.anna_tim.lesson_3.level_2.task_10;
 
-public class CompareStrings {
+class CompareStrings {
     public static void main(String[] args) {
      // equals() method
         //boolean equals (Object str)
