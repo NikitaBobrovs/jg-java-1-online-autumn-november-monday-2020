@@ -15,7 +15,7 @@ public class Robot {
     }
 
     public void sayYourName() {
-        System.out.println("My name is "+name);
+        System.out.println("My name is "+name+".");
     }
     //в примере + this.name
     //использование name тоже работает..

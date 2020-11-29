@@ -4,7 +4,7 @@ public class RobotDemo {
 
     public static void main(String[] args) {
 
-        Robot myRobot1 = new Robot("Kentens"); //дочь дала имена робота
+        Robot myRobot1 = new Robot("Kentens"); //дочь дала имена роботам
 
         myRobot1.sayHello();
         myRobot1.sayYourName();
