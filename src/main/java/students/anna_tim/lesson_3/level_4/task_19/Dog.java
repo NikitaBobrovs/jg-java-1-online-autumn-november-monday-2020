@@ -1,6 +1,6 @@
 package students.anna_tim.lesson_3.level_4.task_19;
 
-public class Dog {
+class Dog {
     String dogName;
     int dogAge;
 
