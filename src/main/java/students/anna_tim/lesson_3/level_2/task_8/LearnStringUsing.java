@@ -5,6 +5,16 @@ public class LearnStringUsing {
 
         String myName = "Anya";
         System.out.println("Hi "+myName+"! ;)");
-    }
+
+
+        //trying also concat()
+        String s1 = "Hello ";
+        String s2 = "World ";
+        String s3 = s1.concat(s2);
+        System.out.println(s3);
+
+        String s4 = s2.concat(s1);
+        System.out.println(s4);
+        }
 }
 
