@@ -2,7 +2,7 @@ package students.anna_tim.lesson_3.level_2.task_9;
 
 import java.util.Scanner;
 
-public class ReadTextInput {
+class ReadTextInput {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
