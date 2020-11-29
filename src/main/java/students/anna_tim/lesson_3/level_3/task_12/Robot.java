@@ -15,6 +15,13 @@ public class Robot {
     }
 
     public void sayYourName() {
-        System.out.println("My name is ROBO");
+        System.out.println("My name is "+name);
     }
+    //в примере + this.name
+    //использование name тоже работает..
+
+    // void sayYourName() {
+    // System.out.println("My name is " + this.name);
+
+    //это из-за public void - можно name, просто void - нужно this.name - в рамка этого класса, что ли ? :)
 }
