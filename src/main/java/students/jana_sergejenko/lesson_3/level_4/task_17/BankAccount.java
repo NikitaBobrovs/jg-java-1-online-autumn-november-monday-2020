@@ -22,8 +22,8 @@ class BankAccount {
         return this.ownerFirstName;
     }
 
-    int getMoneyAmount() {
-        return this.moneyAmount;
+    String getMoneyAmount() {
+        return String.valueOf(this.moneyAmount);
     }
 
 }

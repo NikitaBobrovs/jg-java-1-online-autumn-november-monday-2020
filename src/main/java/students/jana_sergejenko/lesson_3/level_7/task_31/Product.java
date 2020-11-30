@@ -4,18 +4,15 @@ public class Product {
     String name;
     double regularPrice;
     double discount;
-    double actualPrice;
-
 
     Product(String name) {
         this.name = name;
     }
 
     double actualPrice() {
-        actualPrice = regularPrice - discount;
-        return actualPrice;
+        return regularPrice - discount;
     }
     void printInformation() {
-        System.out.println("Product name: " + this.name + "\nprice: " + regularPrice + "\ndiscount " + discount+"\nactual price "+actualPrice);
+        System.out.println("Product name: " + this.name + "\nprice: " + regularPrice + "\ndiscount " + discount+"\nactual price "+(regularPrice - discount));
     }
 }

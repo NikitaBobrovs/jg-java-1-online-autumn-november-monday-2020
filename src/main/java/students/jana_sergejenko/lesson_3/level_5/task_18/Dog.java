@@ -2,14 +2,16 @@ package students.jana_sergejenko.lesson_3.level_5.task_18;
 
 class Dog{
 
-    String dogName;
+    String name;
 
-    Dog(String dogName) {
-        this.dogName = dogName;
+    Dog(String name) {
+        this.name = name;
     }
 
-    String getVoice() {
-        return this.dogName;
+    void getVoice() {
+        System.out.println(name);
+        System.out.println(name);
+        System.out.println(name);
     }
 
 }

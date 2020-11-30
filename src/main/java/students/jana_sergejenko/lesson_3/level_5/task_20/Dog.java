@@ -2,25 +2,21 @@ package students.jana_sergejenko.lesson_3.level_5.task_20;
 
 class Dog{
 
-    String dogName;
-    int dogAge;
-    int newAge;
+    String name;
+    int age;
 
-    Dog(String dogName, int dogAge) {
-        this.dogName = dogName;
-        this.dogAge = dogAge;
+    Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     String getVoice() {
-        return this.dogName;
+        return this.name;
     }
     int getAge() {
-        return this.dogAge;
+        return this.age;
     }
     void happyBirthday() {
-        newAge=this.dogAge+1;
-    }
-    int newAge() {
-        return newAge;
+        this.age=this.age+1;
     }
 }
