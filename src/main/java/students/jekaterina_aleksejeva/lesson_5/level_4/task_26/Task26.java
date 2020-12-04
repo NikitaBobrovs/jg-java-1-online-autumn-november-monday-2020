@@ -1,4 +1,4 @@
-package students.jekaterina_aleksejeva.lesson_5.level_3.task_26;
+package students.jekaterina_aleksejeva.lesson_5.level_4.task_26;
 
 import java.util.Arrays;
 import java.util.Random;
