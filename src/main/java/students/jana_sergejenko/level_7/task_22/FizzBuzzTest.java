@@ -14,9 +14,9 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String realResult = fizzBuzz.detect(9);
         if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+            System.out.println("Fizz test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("Fizz test = FAIL");
         }
     }
 
@@ -25,9 +25,9 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String realResult = fizzBuzz.detect(20);
         if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+            System.out.println("Buzz test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("Buzz test = FAIL");
         }
     }
 
@@ -36,20 +36,22 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String realResult = fizzBuzz.detect(15);
         if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+            System.out.println("FizzBuzz test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("FizzBuzz test = FAIL");
         }
     }
 
     static void scenario4() {
-        String expectedResult = "number";
+        int number=11;
+        String expectedResult =""+number;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String realResult = fizzBuzz.detect(11);
         if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+            System.out.println("Other test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("Other test = FAIL");
+
         }
     }
 
