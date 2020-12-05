@@ -24,7 +24,7 @@ public class CalculatorTest {
     public void isOddTest(){
         int number=4;
         Calculator calculator = new Calculator();
-        boolean realResult = calculator.isOdd(number);
+        boolean realResult = calculator.isEven(number);
         if(realResult==false) {
             System.out.println("Ok");
         } else {
