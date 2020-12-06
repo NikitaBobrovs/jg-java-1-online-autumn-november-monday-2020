@@ -8,19 +8,19 @@ public class MultiplicationTable {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the number (should be integer):");
-        int Number = scanner.nextInt();
+        int number = scanner.nextInt();
 
         //тут точно так? или нужно было каким-то образом использовать цикл?
-        System.out.println(Number + " x 1 = " + Number);
-        System.out.println(Number + " x 2 = " + Number * 2);
-        System.out.println(Number + " x 3 = " + Number * 3);
-        System.out.println(Number + " x 4 = " + Number * 4);
-        System.out.println(Number + " x 5 = " + Number * 5);
-        System.out.println(Number + " x 6 = " + Number * 6);
-        System.out.println(Number + " x 7 = " + Number * 7);
-        System.out.println(Number + " x 8 = " + Number * 8);
-        System.out.println(Number + " x 9 = " + Number * 9);
-        System.out.println(Number + " x 10 = " + Number * 10);
+        System.out.println(number + " x 1 = " + number);
+        System.out.println(number + " x 2 = " + number * 2);
+        System.out.println(number + " x 3 = " + number * 3);
+        System.out.println(number + " x 4 = " + number * 4);
+        System.out.println(number + " x 5 = " + number * 5);
+        System.out.println(number + " x 6 = " + number * 6);
+        System.out.println(number + " x 7 = " + number * 7);
+        System.out.println(number + " x 8 = " + number * 8);
+        System.out.println(number + " x 9 = " + number * 9);
+        System.out.println(number + " x 10 = " + number * 10);
 
 
         scanner.close();
