@@ -12,81 +12,160 @@ class StockTest {
     }
 
     static void scenario1() {
-        int expectedResult = 999;
+        int expectedCurrentPrice = 999;
+        int expectedMinPrice = 10;
+        int expectedMaxPrice = 999;
         Stock stock = new Stock("GOOG", 10);
-        int realResult = stock.updatePrice(999);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        stock.updatePrice(999);
+
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 1");
+        } else
+            System.out.println("NOT OK 1");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 1");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 1");
+        }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 1");
+        } else {
+            System.out.println("NOT OK 1");
         }
     }
 
     static void scenario2() {
-        int expectedResult = 999;
+        int expectedCurrentPrice = 999;
+        int expectedMinPrice = 10;
+        int expectedMaxPrice = 999;
+
         Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(999);
-        int realResult = stock.updatePrice(1);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 2");
+        } else
+            System.out.println("NOT OK 2");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 2");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 2");
+        }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 2");
+        } else {
+            System.out.println("NOT OK 2");
         }
     }
 
+
     static void scenario3() {
-        int expectedResult = 1000;
+        int expectedCurrentPrice = 2;
+        int expectedMinPrice = 2;
+        int expectedMaxPrice = 999;
+
         Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(999);
         stock.updatePrice(2);
-        int realResult = stock.updatePrice(1000);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 3");
+        } else
+            System.out.println("NOT OK 3");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 3");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 3");
+        }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 3");
+        } else {
+            System.out.println("NOT OK 3");
         }
     }
 
     static void scenario4() {
-        int expectedResult = 1000;
+        int expectedCurrentPrice = 1000;
+        int expectedMinPrice = 2;
+        int expectedMaxPrice = 1000;
         Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(999);
         stock.updatePrice(2);
         stock.updatePrice(1000);
-        int realResult = stock.updatePrice(8);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 4");
+        } else
+            System.out.println("NOT OK 4");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 4");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 4");
+        }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 4");
+        } else {
+            System.out.println("NOT OK 4");
         }
     }
 
     static void scenario5() {
-        int expectedResult = 27;
+        int expectedCurrentPrice = 9;
+        int expectedMinPrice = 9;
+        int expectedMaxPrice = 10;
         Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(9);
-        int realResult = stock.updatePrice(27);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 5");
+        } else
+            System.out.println("NOT OK 5");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 5");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 5");
+        }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 5");
+        } else {
+            System.out.println("NOT OK 5");
         }
     }
 
+
     //10 -> 12 -> 5 -> 7 -> 99 -> 77
     static void scenario6() {
-        int expectedResult = 99;
+        int expectedCurrentPrice = 99;
+        int expectedMinPrice = 5;
+        int expectedMaxPrice = 99;
         Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(10);
         stock.updatePrice(12);
         stock.updatePrice(5);
         stock.updatePrice(7);
         stock.updatePrice(99);
-        int realResult = stock.updatePrice(77);
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
-            System.out.println("Sum test = OK");
+        if (stock.currentPrice == expectedCurrentPrice) {
+            System.out.println("OK 6");
+        } else
+            System.out.println("NOT OK 6");
+
+        if (stock.minPrice == expectedMinPrice) {
+            System.out.println("OK 6");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("NOT OK 6");
         }
+
+        if (stock.maxPrice == expectedMaxPrice) {
+            System.out.println("OK 6");
+        } else {
+            System.out.println("NOT OK 6");
+        }
+
     }
 }
