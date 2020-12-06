@@ -1,6 +1,6 @@
 package students.jana_sergejenko.lesson_5.level_6.task_34;
 
-class ArrayUtil {
+public class ArrayUtil {
 
     public void printArrayToConsole(int[] array) {
         for (int i = 0; i < 10; i++) {
