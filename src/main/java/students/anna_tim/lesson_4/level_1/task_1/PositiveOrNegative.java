@@ -10,10 +10,10 @@ public class PositiveOrNegative {
 
         if (number > 0)
             System.out.println("The number is positive");
-        else if (number<0)
+        else if (number < 0)
             System.out.println("The number is negative");
         else
-            System.out.println("It is zero");
+            System.out.println("Please enter some number not equal to zero ;)");
 
     }
 }
