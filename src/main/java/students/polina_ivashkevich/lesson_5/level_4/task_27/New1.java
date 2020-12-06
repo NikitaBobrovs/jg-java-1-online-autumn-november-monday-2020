@@ -5,31 +5,29 @@ import java.util.Random;
 
 public class New1 {
     public static void main(String[] args) {
-
-        Random random = new Random();
-        int[] numbers = new int[5];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(10);
-        } System.out.println(Arrays.toString(numbers));
-        if(numbers[0]>numbers.length){
-            System.out.println(numbers[0]);
-            return;
-        }if (numbers[1]>numbers.length){
-            System.out.println(numbers[1]);
-            return;
-        }if (numbers[2]>numbers.length){
-            System.out.println(numbers[2]);
-            return;
-        }if(numbers[3]>numbers.length){
-            System.out.println(numbers[3]);
-            return;
-        }if(numbers[4]>numbers.length){
-            System.out.println(numbers[4]);
-            return;
+        int num;
+        num = ((int) (Math.random() * 10));
+        int[] numbers = new int[num];
+        for (int i = 0; i < num; i++) {
+            numbers[i] = ((int) (Math.random() * 10));
+            System.out.print(numbers[i] + " ");
         }
+        int maxValue = numbers[0];
+        for (int i = 0; i < num; i++) {
+            if (numbers[i] > maxValue) {
+                maxValue = numbers[i];
+            }
 
         }
+        System.out.print("max:" + maxValue);
     }
+
+}
+
+
+
+
+
 
 
 
