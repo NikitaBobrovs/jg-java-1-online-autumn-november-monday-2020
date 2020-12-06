@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PositiveOrNegative {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter some number (should be int):");
+        System.out.println("Please enter some number not equal to zero (should be int):");
         int number = scanner.nextInt();
 
         if (number > 0)
