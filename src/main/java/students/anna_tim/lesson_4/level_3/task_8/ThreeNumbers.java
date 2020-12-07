@@ -2,7 +2,7 @@ package students.anna_tim.lesson_4.level_3.task_8;
 
 import java.util.Scanner;
 
-public class ThreeNumbers {
+class ThreeNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter first number (should be integer):");
