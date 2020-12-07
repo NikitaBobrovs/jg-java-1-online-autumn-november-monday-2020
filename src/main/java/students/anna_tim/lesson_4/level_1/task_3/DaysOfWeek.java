@@ -2,7 +2,7 @@ package students.anna_tim.lesson_4.level_1.task_3;
 
 import java.util.Scanner;
 
-public class DaysOfWeek {
+class DaysOfWeek {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter number from 1 to 7:");
