@@ -2,7 +2,7 @@ package students.anna_tim.lesson_4.level_2.task_7;
 
 import java.util.Scanner;
 
-public class EqualOrDifferent {
+class EqualOrDifferent {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
