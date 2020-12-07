@@ -2,7 +2,7 @@ package students.anna_tim.students.anna_tim.lesson_4.level_2.task_6;
 
 import java.util.Scanner;
 
-public class ComparisonSmaller {
+class ComparisonSmaller {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter first number (should be integer):");
