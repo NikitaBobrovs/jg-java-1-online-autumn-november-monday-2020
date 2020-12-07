@@ -2,7 +2,7 @@ package students.anna_tim.lesson_4.level_1.task_1;
 
 import java.util.Scanner;
 
-public class PositiveOrNegative {
+class PositiveOrNegative {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter some number not equal to zero (should be int):");
