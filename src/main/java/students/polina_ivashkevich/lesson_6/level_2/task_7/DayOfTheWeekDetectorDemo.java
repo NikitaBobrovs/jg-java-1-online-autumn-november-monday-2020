@@ -1,6 +1,6 @@
 package students.polina_ivashkevich.lesson_6.level_2.task_7;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class DayOfTheWeekDetectorDemo {
