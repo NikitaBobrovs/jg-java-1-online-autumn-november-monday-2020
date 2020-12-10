@@ -6,29 +6,30 @@ class ArrayService {
         return values;
     }
 
-    void generateArray(int[][] array) {
-
+    void generateArray(int[][] values) {
         int value = 1;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                array[i][j] = value++;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values.length; j++) {
+                values[i][j] = value++;
+
             }
         }
     }
 
     void printArray(int[][] values) {
-        for (int i = 0; i < values.length; i++) {
-            for (int j = 0; j < values.length; j++) {
-                System.out.print(values[i][j] + " ");
-            }
-            System.out.println();
+     for (int[] i : values) {
+        for (int j : i) {
+            System.out.print(j + " ");
         }
+        System.out.println();
     }
 
+}
+
     boolean contains(int[][] values, int numberToSearch) {
-        for (int i = 0; i < values.length; i++) {
-            for (int j = 0; j < values.length; j++) {
-                if (values[i][j] == numberToSearch)
+        for (int[] i : values) {
+            for (int j : i) {
+                if (j== numberToSearch)
                     return true;
             }
 
