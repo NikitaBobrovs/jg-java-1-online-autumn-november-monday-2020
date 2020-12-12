@@ -1,6 +1,6 @@
 package students.jana_sergejenko.lesson_5.level_4.task_29;
 
-class Array5 {
+public class Array5 {
     public static void main(String[] args) {
         int n;
         n = ((int) (Math.random() * 10));
