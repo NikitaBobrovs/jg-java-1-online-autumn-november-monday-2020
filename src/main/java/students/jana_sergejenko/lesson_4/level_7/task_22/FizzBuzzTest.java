@@ -1,4 +1,4 @@
-package students.jana_sergejenko.level_7.task_22;
+package students.jana_sergejenko.lesson_4.level_7.task_22;
 
 class FizzBuzzTest {
     public static void main(String[] args) {
