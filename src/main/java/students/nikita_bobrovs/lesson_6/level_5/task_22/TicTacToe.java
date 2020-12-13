@@ -1,5 +1,6 @@
 package students.nikita_bobrovs.lesson_6.level_5.task_22;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class TicTacToe {
@@ -44,17 +45,17 @@ public class TicTacToe {
                 || isWinVerticals(field, player)
                 || isWinHorizontals(field, player);
     }
-    boolean isDraw(int[][] field){
-        for (int[] ints : field) {
-            for (int j = 0; j < field[0].length; j++) {
-                if (ints[j] != -1) {
-                    if (!isWinPlayer(field, 1) && !isWinPlayer(field, 0)) {
-                        return true;
-                    }
+    boolean isFieldComplete(int[][] field){
+        for (int[] ints : field){
+            for (int j =0;j<field[0].length;j++){
+                if (Arrays.stream(ints).anyMatch(x -> x ==-1)){
+                    return false;
                 }
             }
-        }
-        return false;
+        } return true;
+    }
+    boolean isDraw(int[][] field){
+        return isFieldComplete(field) && !isWinPlayer(field, 1) && !isWinPlayer(field, 0);
     }
 }
 
@@ -170,7 +171,7 @@ class TicTacToeTest {
     }
     void isDrawTest3(){
         int[][] field = {{-1,0,1},{-1,1,1},{-1,1,0}};
-        System.out.println("Is it draw(YES (empty cells)) test : "+printTestResult
-                (booleanTester(true,new TicTacToe().isDraw(field))));
+        System.out.println("Is it draw(NO (empty cells)) test : "+printTestResult
+                (booleanTester(false,new TicTacToe().isDraw(field))));
     }
 }
