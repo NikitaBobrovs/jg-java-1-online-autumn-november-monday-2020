@@ -22,11 +22,11 @@ public void play() {
         Move move1 = getNextMove();
         field[move1.getX()][move1.getY()] = 1;
         printFieldToConsole(field);
-        if (isWin(field, 1)) {
+        if (isWinPosition(field, 1)) {
             System.out.println("Player 1 WIN!");
             break;
         }
-        if (isDraw(field)) {
+        if (isDrawPosition(field)) {
             System.out.println("DRAW!");
             break;
         }
