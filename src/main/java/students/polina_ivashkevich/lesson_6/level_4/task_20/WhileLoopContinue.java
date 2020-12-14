@@ -5,7 +5,8 @@ public class WhileLoopContinue {
         boolean t=true;
         while(t==true){
             System.out.println("Идет цикл");
-            t=false;
+            continue;
+
         }
     }
 }
