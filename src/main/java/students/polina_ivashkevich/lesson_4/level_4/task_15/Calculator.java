@@ -13,7 +13,7 @@ public class Calculator {
             } if((thirdNumber>firstNumber)&&(thirdNumber>secondNumber)){
                 System.out.println("Biggest number is: "+thirdNumber);
                 return thirdNumber;
-        }   if((firstNumber==secondNumber)&&(firstNumber>thirdNumber)){
+        }   if((firstNumber==secondNumber)&&(firstNumber==thirdNumber)){
                 System.out.println("All numbers are equal");
                 return thirdNumber;
 
