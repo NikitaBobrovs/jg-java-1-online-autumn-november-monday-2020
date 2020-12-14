@@ -1,7 +1,5 @@
 package students.polina_ivashkevich.lesson_6.level_4.task_18;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 public class WhileInfiniteLoop {
     public static void main(String[] args) {
         boolean x = true;
