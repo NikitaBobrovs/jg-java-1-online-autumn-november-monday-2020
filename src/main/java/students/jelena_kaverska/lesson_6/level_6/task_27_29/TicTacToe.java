@@ -27,11 +27,19 @@ class TicTacToe {
         return false;
     }
 
+    //new
+    public boolean isDiagonalWinLeftToRight(int[][] field, int playerToCheck) {
+        return playerToCheck == field[0][0] && field[0][0] == field[1][1] && field[1][1] == field[2][2];
+    }
+
+    //new
+    public boolean isDiagonalWinRightToLeft(int[][] field, int playerToCheck) {
+        return playerToCheck == field[2][0] && field[2][0] == field[1][1] && field[1][1] == field[0][2];
+    }
+
+    //updated
     public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck) {
-        int firstNum = field[0][0];
-        int lastNum = field[2][0];
-        return (firstNum == playerToCheck && firstNum == field[1][1] && field[1][1] == field[2][2]) ||
-                (lastNum == playerToCheck && lastNum == field[1][1] && field[1][1] == field[0][2]);
+        return isDiagonalWinLeftToRight(field, playerToCheck) || isDiagonalWinRightToLeft(field, playerToCheck);
     }
 
     public boolean isWinPosition(int[][] field, int playerToCheck) {
@@ -39,17 +47,21 @@ class TicTacToe {
                 || isWinPositionForVerticals(field, playerToCheck);
     }
 
-    public boolean isDrawPosition(int[][] field) {
-        boolean draw = false;
+    //check at least one is -1 -> true
+    public boolean anyEmpty(int[][] field) {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
-                if (field[i][j] != -1 && !isWinPosition(field, 1) && !isWinPosition(field, 0)) {
-                    draw = true;
+                if (field[i][j] == -1) {
+                    return true;
                 }
             }
-
         }
-        return draw;
+        return false;
+    }
+
+    //updated
+    public boolean isDrawPosition(int[][] field) {
+       return !(anyEmpty(field)) && !isWinPosition(field, 1) && !isWinPosition(field, 0);
     }
 
     // 27 task
@@ -70,7 +82,7 @@ class TicTacToe {
         int x = scanner.nextInt();
         System.out.print("Enter number from 1 to 3 for Y coordinate: ");
         int y = scanner.nextInt();
-        return new Move(x-1, y-1);
+        return new Move(x - 1, y - 1);
     }
 
     // 29 task
@@ -111,6 +123,7 @@ class TicTacToe {
             }
         }
     }
+
     public static void main(String[] args) {
         TicTacToe t = new TicTacToe();
         t.play();
