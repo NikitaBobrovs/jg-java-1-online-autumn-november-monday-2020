@@ -71,3 +71,7 @@ Please, follow next steps in order to publish your homework for personal review:
 * [ProjectEuler](https://projecteuler.net/)
 * [LeetCode](https://leetcode.com/)
 * [HackerRank](https://www.hackerrank.com/)
+
+## Feedback
+
+* [Course Feedback](https://forms.gle/LNgWNYE2iTn8mgQK9)
