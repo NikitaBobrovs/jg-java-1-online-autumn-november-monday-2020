@@ -1,9 +1,10 @@
 package students.polina_ivashkevich.lesson_7.level_1.task_1;
 
+import java.sql.SQLOutput;
+
 public class WordService {
 
     public String findMostFrequentWord(String text) {
-
 
         return text;
     }
@@ -20,16 +21,17 @@ public class WordService {
         word[7] = "Pig";
         word[8] = "Chicken";
         word[9] = "Dog";
-        String a=null;
-        String b=null;
-        for (String i : word) {
-            if (i == word[1]) {
-                System.out.println(i);
+        String a="Dog";
 
+        for (String i : word) {
+            if (i == a) {
+                System.out.println(i);
             }
         }
     }
+
 }
+
 
 
 
