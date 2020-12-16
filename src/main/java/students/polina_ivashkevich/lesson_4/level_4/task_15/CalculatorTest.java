@@ -1,25 +1,27 @@
 package students.polina_ivashkevich.lesson_4.level_4.task_15;
 
+
 import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
         CalculatorTest test = new CalculatorTest();
-        test.compare();
+        test.test1();
     }
 
 
-    public void compare() {
-        java.util.Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter first number:");
-        int firstNumber = scanner.nextInt();
-        System.out.println("Enter secondNumber number");
-        int secondNumber = scanner.nextInt();
-        System.out.println("Enter third number");
-        int thirdNumber = scanner.nextInt();
+        void test1(){
 
+            java.util.Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter first number:");
+            int firstNumber = scanner.nextInt();
+            System.out.println("Enter secondNumber number");
+            int secondNumber = scanner.nextInt();
+            System.out.println("Enter third number");
+            int thirdNumber = scanner.nextInt();
 
-        Calculator calculator = new Calculator();
+            Calculator calculator = new Calculator();
+            calculator.compare(4,5,2);
         if ((firstNumber > secondNumber) && (firstNumber > thirdNumber)) {
             System.out.println("Ok " + firstNumber);
         }
@@ -38,5 +40,6 @@ public class CalculatorTest {
         }else {
             System.out.println("Other");
         }
+
     }
 }
