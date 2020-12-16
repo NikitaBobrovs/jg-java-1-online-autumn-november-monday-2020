@@ -7,14 +7,18 @@ public class Product {
     double actualPrice;
 
     public double actualPrice() {
-        return  actualPrice=regularPrice*discount/100;
+        actualPrice=regularPrice*discount/100;
+        return actualPrice;
 
 
 
     } public void printInformation() {
-        System.out.println(name);
-        System.out.println("$ " + regularPrice  );
-        System.out.println(discount + " %");
+
+
+        System.out.println("Product name: "+name);
+        System.out.println("Regular price is: "+"$ " + regularPrice  );
+        System.out.println("Discount: "+discount + " %");
+        System.out.println("Actual price is: " +"$"+ actualPrice);
     }
 
 }
