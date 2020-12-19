@@ -1,12 +1,13 @@
 package students.polina_ivashkevich.lesson_2.level_2.task_8;
 
-import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Name {
     public static void main(String[] args) {
-        String s = new String();
-        s="Polina";
-        System.out.println("Hello" + "_" + s);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String s = scanner.nextLine();
+        System.out.println(s);
     }
 
 }
