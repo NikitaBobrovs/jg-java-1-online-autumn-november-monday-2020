@@ -1,7 +1,8 @@
 package students.polina_ivashkevich.lesson_2.level_5.task_15;
 
-public class Text {
+
+public class Text1 {
     public static void main(String[] args) {
-        System.out.print("text");
+        System.out.print("Hey! My dear friend!");
     }
 }
