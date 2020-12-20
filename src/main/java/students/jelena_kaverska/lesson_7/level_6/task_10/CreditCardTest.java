@@ -117,12 +117,21 @@ class CreditCardTest {
                 " + Balance changed: " + printResult(amount == creditCard.getBalance()));
     }
 
-    public void testDepositToCoverDebt() {
+    public void testDepositToCoverDebtPartially() {
         creditCard = new CreditCard("1234", "9876");
         creditCard.withdraw("9876", 1550.99);
         creditCard.deposit("9876", 1000);
         double expDebt = 550.99;
         System.out.println("Deposit covers debt partially - debt updated: " + printResult(expDebt == creditCard.getDebt()) +
+                " balance unchanged: " + printResult(0 == creditCard.getBalance()));
+    }
+
+    public void testDepositToCoverDebtOnly() {
+        creditCard = new CreditCard("1234", "9876");
+        creditCard.withdraw("9876", 1550.99);
+        creditCard.deposit("9876", 1550.99);
+        double expDebt = 0;
+        System.out.println("Deposit covers debt only - debt 0: " + printResult(expDebt == creditCard.getDebt()) +
                 " balance unchanged: " + printResult(0 == creditCard.getBalance()));
     }
 
@@ -142,6 +151,30 @@ class CreditCardTest {
         System.out.println("Deposit adds balance: " + printResult(expBalance == creditCard.getBalance()));
     }
 
+    public void testDepositNegativeAmount() {
+        creditCard = new CreditCard("1234", "9876");
+        boolean act = creditCard.deposit("9876", -10);
+        System.out.println("Deposit negative amount: " + printResult(false == act));
+    }
+
+    public void testWithdrawNegativeAmount() {
+        creditCard = new CreditCard("1234", "9876");
+        boolean act = creditCard.withdraw("9876", -10);
+        System.out.println("Withdraw negative amount: " + printResult(false == act));
+    }
+
+    public void testDeposit0() {
+        creditCard = new CreditCard("1234", "9876");
+        boolean act = creditCard.deposit("9876", 0);
+        System.out.println("Deposit 0 amount: " + printResult(false == act));
+    }
+
+    public void testWithdraw0() {
+        creditCard = new CreditCard("1234", "9876");
+        boolean act = creditCard.withdraw("9876", 0);
+        System.out.println("Withdraw 0 amount: " + printResult(false == act));
+    }
+
     public static void main(String[] args) {
         CreditCardTest test = new CreditCardTest();
         test.testWithdrawWithIncorrectPin();
@@ -155,8 +188,13 @@ class CreditCardTest {
         test.testChangeLimitWithInCorrectPin();
         test.testDepositIncorrectPin();
         test.testDepositWithCorrectPin();
-        test.testDepositToCoverDebt();
+        test.testDepositToCoverDebtPartially();
+        test.testDepositToCoverDebtOnly();
         test.testDepositToCoverDebtAndAddBalance();
         test.testDepositWithNoDebt();
+        test.testDepositNegativeAmount();
+        test.testWithdrawNegativeAmount();
+        test.testDeposit0();
+        test.testWithdraw0();
     }
 }

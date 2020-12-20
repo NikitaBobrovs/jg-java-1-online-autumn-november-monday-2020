@@ -15,7 +15,9 @@ class CreditCard {
     }
 
     public boolean deposit(String pin, double amount) {
-        if (this.pin.equals(pin)) {
+        if (!this.pin.equals(pin) || amount <= 0) {
+            return false;
+        } else {
             //В первую очередь зачисление покрывает задолженность по кредиту;
             if (debt > 0) {
                 debt -= amount;
@@ -26,15 +28,17 @@ class CreditCard {
                 //case: no debt
             } else {
                 balance += amount;
-                return true;
             }
+            return true;
         }
-        return false;
     }
 
     public boolean withdraw(String pin, double amount) {
+        if (!this.pin.equals(pin) || amount <= 0) {
+            return false;
+        }
         //Если пин-коды не совпадают, операция по снятию денег должна быть отклонена;
-        if (this.pin.equals(pin)) {
+        else {
             if (amount <= balance) {
                 balance -= amount;
                 return true;
@@ -48,7 +52,6 @@ class CreditCard {
                 return false;
             }
         }
-        return false;
     }
 
     public boolean changeLimit(String pin, double amount) {
@@ -84,48 +87,15 @@ class CreditCard {
 
     public static void main(String[] args) {
         CreditCard creditCard = new CreditCard("123454", "8888");
+        System.out.println(creditCard.withdraw("8888", 1000));
         System.out.println(creditCard.toString());
-        creditCard.changeLimit("8888", 1000);
-        System.out.println(creditCard.toString());
-        System.out.println(creditCard.deposit("8888", 3000));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.withdraw("8888", 4500));
+        System.out.println(creditCard.deposit("8888", 1000));
         System.out.println(creditCard.toString());
 
-        System.out.println(creditCard.withdraw("8888", 875));
+        System.out.println(creditCard.deposit("8888", 0));
         System.out.println(creditCard.toString());
 
-        System.out.println(creditCard.deposit("8888", 2000));
+        System.out.println(creditCard.withdraw("8888", 0));
         System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.withdraw("8888", 875));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.deposit("8888", 300));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.deposit("8888", 80));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.deposit("8888", 10));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.withdraw("8888", 1500));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.withdraw("8888", 1));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.changeLimit("8888", 1485));
-        System.out.println("upd limit: " + creditCard.toString());
-        System.out.println(creditCard.withdraw("8888", 1));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.withdraw("8888", 1));
-        System.out.println(creditCard.toString());
-
-        System.out.println(creditCard.deposit("8899", 100));
-
     }
 }
