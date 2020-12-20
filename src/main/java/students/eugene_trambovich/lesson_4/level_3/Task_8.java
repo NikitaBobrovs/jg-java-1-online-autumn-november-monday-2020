@@ -15,15 +15,13 @@ public class Task_8 {
         System.out.println("Enter the 3rd integer: ");
         int thirdInteger = scanner.nextInt();
 
-
         if (firstInteger == secondInteger && secondInteger == thirdInteger) {
             System.out.println("All numbers are equal");
 
-        } else if (firstInteger != secondInteger && secondInteger != thirdInteger) {
+        } else if (firstInteger != secondInteger && firstInteger != thirdInteger && secondInteger != thirdInteger) {
             System.out.println("All numbers are different");
         } else {
             System.out.println("Neither all are equal or different");
         }
-
     }
 }
