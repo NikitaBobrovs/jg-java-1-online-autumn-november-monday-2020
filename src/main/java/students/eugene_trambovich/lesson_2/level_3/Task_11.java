@@ -7,6 +7,17 @@ public class Task_11 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter 1st integer: ");
-        int firstInteger = scanner.nextInt();
+        double firstInteger = scanner.nextInt();
+
+        System.out.println("Please enter 2nd integer: ");
+        double secondInteger = scanner.nextInt();
+
+        System.out.println("Please enter 3rd integer: ");
+        double thirdInteger = scanner.nextInt();
+
+        double average = ((firstInteger + secondInteger + thirdInteger) / 3);
+        System.out.println(average);
+
     }
 }
+
