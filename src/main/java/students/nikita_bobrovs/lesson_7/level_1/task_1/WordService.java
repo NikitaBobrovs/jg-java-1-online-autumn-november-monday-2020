@@ -3,12 +3,11 @@ package students.nikita_bobrovs.lesson_7.level_1.task_1;
 import java.util.Arrays;
 
 class WordService {
-    String[] splitTextInArray(String text) {
+    private String[] splitTextInArray(String text) {
         text = text.toLowerCase();
         return text.split(" ");
     }
-
-    String findMostFrequentWord(String[] text) {
+    String mostFrequentWordInArray(String[] text){
         Arrays.sort(text);
         int max = 0;
         int count = 1;
@@ -27,5 +26,9 @@ class WordService {
             }
         }
         return word;
+    }
+
+    public String findMostFrequentWord(String text) {
+        return mostFrequentWordInArray(splitTextInArray(text));
     }
 }
