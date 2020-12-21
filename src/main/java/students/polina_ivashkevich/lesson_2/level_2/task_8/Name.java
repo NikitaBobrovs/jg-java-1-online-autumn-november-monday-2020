@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Name {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        String s = scanner.nextLine();
-        System.out.println(s);
+        System.out.println("Enter your name");
+        Scanner scanner = new java.util.Scanner(System.in);
+        String name = scanner.next();
+        System.out.println(name);
     }
-
 }
