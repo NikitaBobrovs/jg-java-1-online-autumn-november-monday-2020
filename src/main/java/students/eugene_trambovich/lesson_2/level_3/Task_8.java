@@ -1,4 +1,4 @@
-package students.eugene_trambovich.lesson_2;
+package students.eugene_trambovich.lesson_2.level_3;
 
 import java.util.Scanner;
 
