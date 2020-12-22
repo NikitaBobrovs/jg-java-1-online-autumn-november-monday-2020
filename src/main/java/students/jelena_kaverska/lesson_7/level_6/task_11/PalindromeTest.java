@@ -4,10 +4,7 @@ class PalindromeTest {
     Palindrome p = new Palindrome();
 
     String printResults(boolean result) {
-        if (result) {
-            return "PASSED";
-        }
-        return "FAILED";
+        return result ? "PASSED" : "FAILED";
     }
 
     public void testNoSpacesAllLowelCase() {

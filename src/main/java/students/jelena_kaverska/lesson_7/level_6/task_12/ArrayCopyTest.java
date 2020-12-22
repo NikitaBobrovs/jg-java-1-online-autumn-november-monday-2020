@@ -6,38 +6,42 @@ class ArrayCopyTest {
     ArrayCopy copy = new ArrayCopy();
 
     String printResults(boolean result) {
-        if (result) {
-            return "PASSED";
-        }
-        return "FAILED";
+        return result ? "PASSED" : "FAILED";
     }
 
     public void test1() {
         int[] initial = {1, 2, 3, 4, 5, 6, 7};
-        int[] expected = {2, 3, 4};
+        int[] expected = {1, 2, 3};
         int[] actual = copy.copyInRange(initial, 1, 3);
-        System.out.println("Copy range in the middle test: " + printResults(Arrays.equals(expected, actual)));
+        System.out.println("Copy range - test: " + printResults(Arrays.equals(expected, actual)));
     }
 
     public void test2() {
         int[] initial = {1, 2, 3, 4, 5, 6, 7};
-        int[] expected = {1};
-        int[] actual = copy.copyInRange(initial, 0, 0);
-        System.out.println("Copy range from 0 to 0 test: " + printResults(Arrays.equals(expected, actual)));
+        int[] expected = {5};
+        int[] actual = copy.copyInRange(initial, 5, 5);
+        System.out.println("Copy one number - test: " + printResults(Arrays.equals(expected, actual)));
     }
 
     public void test3() {
         int[] initial = {1, 2, 3, 4, 5, 6, 7};
         int[] expected = {1, 2, 3, 4, 5, 6, 7};
-        int[] actual = copy.copyInRange(initial, 0, initial.length - 1);
-        System.out.println("Copy range from 0 to last test: " + printResults(Arrays.equals(expected, actual)));
+        int[] actual = copy.copyInRange(initial, 0, 8);
+        System.out.println("Copy all elements - test: " + printResults(Arrays.equals(expected, actual)));
     }
 
     public void test4() {
         int[] initial = {1, 2, 3, 4, 5, 6, 7};
-        int[] expected = {7};
-        int[] actual = copy.copyInRange(initial, initial.length - 1, initial.length - 1);
-        System.out.println("Copy range from last to last test: " + printResults(Arrays.equals(expected, actual)));
+        int[] expected = null;
+        int[] actual = copy.copyInRange(initial, 7, 2);
+        System.out.println("Invalid range - test: " + printResults(Arrays.equals(expected, actual)));
+    }
+
+    public void test5() {
+        int[] initial = {1, 2, 3, 4, 5, 6, 7};
+        int[] expected = null;
+        int[] actual = copy.copyInRange(initial, 20, 25);
+        System.out.println("Unavailable range - test: " + printResults(Arrays.equals(expected, actual)));
     }
 
     public static void main(String[] args) {
@@ -46,5 +50,6 @@ class ArrayCopyTest {
         copyTest.test2();
         copyTest.test3();
         copyTest.test4();
+        copyTest.test5();
     }
 }
