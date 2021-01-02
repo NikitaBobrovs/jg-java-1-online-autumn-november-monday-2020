@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_6_level_5.task_22;
+package students.jana_sergejenko.lesson_6.level_5.task_22;
 
 public class TicTacToeTest {
     public static void main(String[] args) {
