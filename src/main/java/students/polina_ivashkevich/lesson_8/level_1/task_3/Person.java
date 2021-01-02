@@ -1,7 +1,5 @@
 package students.polina_ivashkevich.lesson_8.level_1.task_3;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
-
 public class Person {
     private String fullName;
     private int age;
@@ -28,3 +26,6 @@ public class Person {
     }
 }
 
+class Address {
+
+}
