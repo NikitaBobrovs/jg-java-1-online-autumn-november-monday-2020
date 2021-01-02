@@ -6,8 +6,7 @@ public class Box {
 
 
     Box(){
-        high=5;
-        weight=6.1;
+        System.out.println("Default constructor");
 
     }
 }
