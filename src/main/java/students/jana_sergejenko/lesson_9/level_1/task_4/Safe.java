@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_9.task_4;
+package students.jana_sergejenko.lesson_9.level_1.task_4;
 
 public class Safe {
    String password="qwerty";
