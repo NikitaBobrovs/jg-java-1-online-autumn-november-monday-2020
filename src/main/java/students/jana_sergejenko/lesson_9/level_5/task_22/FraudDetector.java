@@ -1,12 +1,23 @@
 package students.jana_sergejenko.lesson_9.level_5.task_22;
 
 class FraudDetector {
+    private FraudRule[] fraudrule;
 
-
-    boolean isFraud(Transaction t) {
-        return (isFraudTrader(t)||isFraudAmount(t)||isFraudCity(t)||isFraudCountry(t));
+    FraudDetector(FraudRule[] fraudrule) {
+        this.fraudrule = fraudrule;
     }
 
+    boolean isFraud(Transaction t) {
+        for (FraudRule fd : fraudrule) {
+            if (fd.isFraud(t)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*boolean isFraud(Transaction t) {
+        return (isFraudTrader(t)||isFraudAmount(t)||isFraudCity(t)||isFraudCountry(t));
 
     boolean isFraudTrader(Transaction t) {
         return t.gettrader().getfullName().contains("Pokemon");
@@ -21,5 +32,5 @@ class FraudDetector {
     }
     boolean isFraudCountry(Transaction t) {
         return t.gettrader().getcountry().equals("Germany") && (t.getamount() > 100);
-    }
+    }*/
 }

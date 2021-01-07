@@ -24,62 +24,72 @@ public class Demo {
     }
 
     public void scenario1() {
+        FraudRule fraudrule=new FraudRule1("Rule 1");
         Transaction test = new Transaction(new Trader("Pokemon", "Riga", "Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=true;
        System.out.println("Fullname Fraud Result" + checkResult(result, expected));
     }
     public void scenario2() {
+        FraudRule fraudrule=new FraudRule1("Rule 1");
         Transaction test = new Transaction(new Trader("Napoleon", "Riga","Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=false;
         System.out.println("Fullname not Fraud Result" + checkResult(result, expected));
     }
     public void scenario3() {
+        FraudRule fraudrule=new FraudRule2("Rule 2");
         Transaction test = new Transaction(new Trader("Napoleon", "Riga","Latvia"), 1000000000);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=true;
         System.out.println("Fraud Amount Result" + checkResult(result, expected));
     }
     public void scenario4() {
+        FraudRule fraudrule=new FraudRule2("Rule 2");
         Transaction test = new Transaction(new Trader("Napoleon", "Riga","Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=false;
         System.out.println("NOT Fraud Amount Result" + checkResult(result, expected));
     }
     public void scenario5() {
+        FraudRule fraudrule=new FraudRule3("Rule 3");
         Transaction test = new Transaction(new Trader("Napoleon", "Riga","Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=false;
         System.out.println("NOT Fraud City Result" + checkResult(result, expected));
     }
     public void scenario6() {
+        FraudRule fraudrule=new FraudRule3("Rule 3");
         Transaction test = new Transaction(new Trader("Napoleon", "Sidney","Australia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=true;
         System.out.println("Fraud City Result" + checkResult(result, expected));
     }
     public void scenario7() {
+        FraudRule fraudrule=new FraudRule4("Rule 4");
         Transaction test = new Transaction(new Trader("Napoleon", "Jamaica","Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
-        boolean expected=true;
+        boolean result = fraudrule.isFraud(test);
+        boolean expected=false;
         System.out.println("Fraud City 2 Result" + checkResult(result, expected));
     }
     public void scenario8() {
+        FraudRule fraudrule=new FraudRule4("Rule 4");
         Transaction test = new Transaction(new Trader("Napoleon", "Sidney","Latvia"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
-        boolean expected=true;
+        boolean result = fraudrule.isFraud(test);
+        boolean expected=false;
         System.out.println("Fraud City 2 Result" + checkResult(result, expected));
     }
     public void scenario9() {
+        FraudRule fraudrule=new FraudRule5("Rule 5");
         Transaction test = new Transaction(new Trader("Napoleon", "Berlin","Germany"), 101);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=true;
         System.out.println("Fraud Country Result" + checkResult(result, expected));
     }
     public void scenario10() {
+        FraudRule fraudrule=new FraudRule5("Rule 5");
         Transaction test = new Transaction(new Trader("Napoleon", "Berlin","Germany"), 100);
-        boolean result = (new FraudDetector().isFraud(test));
+        boolean result = fraudrule.isFraud(test);
         boolean expected=false;
         System.out.println("NOT Fraud Country Result" + checkResult(result, expected));
     }
