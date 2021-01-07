@@ -1,35 +1,38 @@
 package students.polina_ivashkevich.lesson_7.level_1.task_1;
 
-import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.Locale;
 
 public class WordService {
 
-    public String findMostFrequentWord(String text) {
+    private String[] findMostFrequentWord(String text) {
+        text = text.toLowerCase(Locale.ROOT);
+        return text.split("");
 
-        return text;
     }
+    String mostFrequentWordInArray(String [] text) {
+        Arrays.sort(text);
+        int max = 0;
+        int count = 1;
+        String word = "";
 
-    public void text() {
-        String[] word = new String[10];
-        word[0] = "Cat";
-        word[1] = "Dog";
-        word[2] = "Dog";
-        word[3] = "Dog";
-        word[4] = "Parrot";
-        word[5] = "Carrot";
-        word[6] = "Parrot";
-        word[7] = "Pig";
-        word[8] = "Chicken";
-        word[9] = "Dog";
-        String a="Dog";
-
-        for (String i : word) {
-            if (i == a) {
-                System.out.println(i);
+        for (int i = 1; i < text.length; i++) {
+            if(text[i].equals(text[0])) {
+                count++;
+            } else {
+              count = 1;
+              text[0] = text[i];
+            }
+            if (max<count) {
+                max = count;
+                word = text[i];
             }
         }
+        return word;
     }
-
+    public String  findMostFrequentWordInArray(String text) {
+        return findMostFrequentWordInArray((text));
+    }
 }
 
 
