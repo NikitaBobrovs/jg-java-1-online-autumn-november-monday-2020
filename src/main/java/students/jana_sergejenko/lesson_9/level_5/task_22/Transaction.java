@@ -15,4 +15,9 @@ class Transaction {
     public int getamount(){
         return amount;
     }
+    @Override
+    public String toString() {
+        return "trader:" + this.trader + ", "
+                + "amount:" + this.amount;
+    }
 }
