@@ -1,0 +1,7 @@
+Cant set class to private.
+
+Even if could, it would be useless,
+because it would make it unreachable from outside.
+
+Private class could be only accessed from the
+inside of itself.
