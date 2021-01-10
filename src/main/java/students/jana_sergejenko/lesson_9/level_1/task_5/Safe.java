@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_9.task_5;
+package students.jana_sergejenko.lesson_9.level_1.task_5;
 
 class Safe {
     private String password;
