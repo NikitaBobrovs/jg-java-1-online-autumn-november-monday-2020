@@ -1,0 +1,4 @@
+In Java solely inner classes are allowed to be declared as private, so you may access it within the
+outer/high-level class (the ones that we create within the course).
+High-level classes cannot be declared as private, as you are not able to access the code of such class
+from anywhere, so there is no sense in such private classes.
