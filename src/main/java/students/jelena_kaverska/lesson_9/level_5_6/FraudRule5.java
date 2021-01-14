@@ -1,4 +1,4 @@
-package students.jelena_kaverska.lesson_9.level_5.task_23;
+package students.jelena_kaverska.lesson_9.level_5_6;
 
 class FraudRule5 extends FraudRule {
 
