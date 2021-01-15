@@ -13,6 +13,21 @@ class Product {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        return title != null ? title.equals(product.title) : product.title == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return title != null ? title.hashCode() : 0;
+    }
+
+    @Override
     public String toString() {
         return "Product{" +
                 "title='" + title + '\'' +
