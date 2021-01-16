@@ -3,9 +3,9 @@ package students.jana_sergejenko.lesson_10.level_2.task_4;
 public class DayofTheWeekDetectorArray implements DayOfTheWeekDetector {
     @Override
     public String detectDayName(int number) {
-        String week_days[] = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-        if (number >= 0 && number <= 6) {
-            return week_days[number];
+        String week_days[] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday", "Sunday",};
+        if (number >= 1 && number <= 7) {
+            return week_days[number-1];
         }
         return "Please input a valid number between 1 and 7";
     }
