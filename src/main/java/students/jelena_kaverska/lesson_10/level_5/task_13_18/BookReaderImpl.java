@@ -6,10 +6,6 @@ import java.util.List;
 class BookReaderImpl implements BookReader {
     private List<Book> books = new ArrayList<>();
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
     //в электронную библиотеку уствойства нельзя добавлять
     //одинаковые книги (книги у которых автор и название совпадают)
     @Override
@@ -32,14 +28,8 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void print() {
-        if (!books.isEmpty()) {
-            for (Book book : books) {
-                System.out.print(book.getTitle() + "[" + book.getAuthor() + "] ");
-            }
-            System.out.println();
-        }
-        System.out.println("[]");
+    public List<Book> getAllBooks() {
+        return books;
     }
 
     @Override
@@ -57,21 +47,27 @@ class BookReaderImpl implements BookReader {
 class MyDemo {
     public static void main(String[] args) {
         BookReaderImpl br = new BookReaderImpl();
-        br.print();
-        System.out.println(br.add(new Book("Atlas Shrugged", "Ayn Rand")));
-        br.print();
-        System.out.println(br.add(new Book("1984", "George Orwell")));
-        br.print();
-        System.out.println(br.add(new Book("Atlas Shrugged", "Ayn Rand")));
-        br.print();
-        System.out.println(br.findByAuthor(" Rand"));
+        System.out.println("All books: " + br.getAllBooks());
+
+        Book b1 = new Book("Atlas Shrugged", "Ayn Rand");
+        Book b2 = new Book("1984", "George Orwell");
+        Book b3 = new Book("AAA", "BBB");
+
+        System.out.println(br.add(b1));
+        System.out.println(br.add(b2));
+        System.out.println(br.getAllBooks());
+
+        System.out.println("false : " + br.add(b2));
+        System.out.println(br.getAllBooks());
+        System.out.println(br.findByAuthor("well"));
 
 
-        System.out.println("del 1: " + br.delete(new Book("Atlas Shrugged", "Ayn Rand")));
-        br.print();
-        System.out.println("del 2: " + br.delete(new Book("1984", "George Orwell")));
-        br.print();
+        System.out.println("del 1: " + br.delete(b1));
+        System.out.println(br.getAllBooks());
+        System.out.println("del 2: " + br.delete(b2));
+        System.out.println(br.getAllBooks());
         System.out.println(br.add(new Book(" ", " ")));
-        br.print();
+        System.out.println("del 3: " + br.delete(b3));
+
     }
 }

@@ -1,6 +1,8 @@
 package students.jelena_kaverska.lesson_10.level_5.task_13_18;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 class BookReaderImplTests {
@@ -126,6 +128,19 @@ class BookReaderImplTests {
         System.out.println("Test finding multiple books by author (partially): " + printResults(exp.equals(act)));
     }
 
+    void testGetAllBooks() {
+        bookReader = new BookReaderImpl();
+        Book b1 = new Book("Atlas Shrugged", "Ayn Rand");
+        Book b2 = new Book("1984", "George Orwell");
+        bookReader.add(b1);
+        bookReader.add(b2);
+        List<Book> exp = new ArrayList<>(List.of(b2, b1));
+        List<Book> act = bookReader.getAllBooks();
+        exp.sort(Comparator.comparing(Book::getTitle));
+        act.sort(Comparator.comparing(Book::getTitle));
+        System.out.println("All books test: " + printResults(exp.equals(act)));
+    }
+
     public static void main(String[] args) {
         BookReaderImplTests tests = new BookReaderImplTests();
         tests.testAddBook();
@@ -142,5 +157,6 @@ class BookReaderImplTests {
         tests.testFindByAuthorMultipleBooks();
         tests.testFindByAuthorOneBook2();
         tests.testFindByAuthorMultipleBooks2();
+        tests.testGetAllBooks();
     }
 }

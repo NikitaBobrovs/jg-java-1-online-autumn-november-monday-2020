@@ -9,7 +9,7 @@ interface BookReader {
     //удаление книги из электронной библиотеки
     boolean delete(Book book);
 
-    void print();
+    List<Book> getAllBooks();
 
     List<Book> findByAuthor(String author);
 
