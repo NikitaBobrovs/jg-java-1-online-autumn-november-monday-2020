@@ -5,6 +5,11 @@ import java.util.List;
 
 class BookReaderImpl implements BookReader {
 
+    private final List<Book> library = new ArrayList<>();
+    public List<Book> getLibrary() {
+        return library;
+    }
+
     private boolean containsTitleAuthor(Book book) {
         return book.getTitle() != null && book.getAuthor() != null;
     }
@@ -20,10 +25,10 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean addBook(Book book, List<Book> library) {
+    public boolean addBook(Book book) {
         if (containsTitleAuthor(book)) {
-            if (isNewInLibrary(book, library)) {
-                library.add(book);
+            if (isNewInLibrary(book, this.library)) {
+                this.library.add(book);
                 return true;
             }
         }
@@ -31,10 +36,10 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean removeBook(Book book, List<Book> library) {
+    public boolean removeBook(Book book) {
         if (containsTitleAuthor(book)) {
-            if (!isNewInLibrary(book, library)) {
-                library.remove(book);
+            if (!isNewInLibrary(book, this.library)) {
+                this.library.remove(book);
                 return true;
             }
         }
@@ -42,16 +47,14 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printAllBooks(List<Book> library) {
-        for (Book value : library) {
-            System.out.println(value.getTitle() + " [ " + value.getAuthor() + " ].");
-        }
+    public List<Book> getAllBooks() {
+        return getLibrary();
     }
 
     @Override
-    public List<Book> findByAuthorFullName(String author, List<Book> library) {
+    public List<Book> findByAuthorFullName(String author) {
         List<Book> foundBooks = new ArrayList<>();
-        for (Book value : library) {
+        for (Book value : this.library) {
             if (author.equals(value.getAuthor())) {
                 foundBooks.add(value);
             }
@@ -60,9 +63,9 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public List<Book> findByAuthorPartName(String author, List<Book> library) {
+    public List<Book> findByAuthorPartName(String author) {
         List<Book> foundBooks = new ArrayList<>();
-        for (Book value : library) {
+        for (Book value : this.library) {
             if (value.getAuthor().startsWith(author)) {
                 foundBooks.add(value);
             }

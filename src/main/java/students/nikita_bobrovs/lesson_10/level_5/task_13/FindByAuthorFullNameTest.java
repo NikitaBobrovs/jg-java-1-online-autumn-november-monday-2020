@@ -14,9 +14,6 @@ class FindByAuthorFullNameTest {
         return tester ? "OK" : "FAIL";
     }
 
-    private final BookReader bookReader = new BookReaderImpl();
-    private List<Book> bookList = new ArrayList<>();
-
     Book book1 = new Book("Harry Potter", "Nikolay");
     Book book2 = new Book("Magic Academy", "Nikolay");
     Book book3 = new Book("Henry", "Lerna");
@@ -27,26 +24,27 @@ class FindByAuthorFullNameTest {
         bookList.add(book2);
         bookList.add(book3);
         bookList.add(book4);
-        this.bookList = bookList;
     }
 
     void findByAuthorFullNameTest1() {
-        setBookList(bookList);
+        BookReaderImpl bookReader = new BookReaderImpl();
+        setBookList(bookReader.getLibrary());
 
         List<Book> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book2);
 
         System.out.println("Find book by authors full name(not null) : " + testResult
-                (expected.equals(bookReader.findByAuthorFullName("Nikolay", bookList))));
+                (expected.equals(bookReader.findByAuthorFullName("Nikolay"))));
     }
 
     void findByAuthorFullNameTest2() {
-        setBookList(bookList);
+        BookReaderImpl bookReader = new BookReaderImpl();
+        setBookList(bookReader.getLibrary());
 
         List<Book> expected = new ArrayList<>();
 
         System.out.println("Find book by authors full name(null) : " + testResult
-                (expected.equals(bookReader.findByAuthorFullName("Clark", bookList))));
+                (expected.equals(bookReader.findByAuthorFullName("Clark"))));
     }
 }
