@@ -15,49 +15,48 @@ class RemoveBookTest {
         return tester ? "OK" : "FAIL";
     }
 
-    BookReader bookReader = new BookReaderImpl();
 
     void removeBookTest1() {
+        BookReaderImpl bookReader = new BookReaderImpl();
         List<Book> expected = new ArrayList<>();
-        List<Book> real = new ArrayList<>();
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
         Book book2 = new Book("Magic Academy", "Stephane Mayer");
 
         expected.add(book1);
-        real.add(book1);
-        real.add(book2);
+        bookReader.getLibrary().add(book1);
+        bookReader.getLibrary().add(book2);
 
-        bookReader.removeBook(book2, real);
+        bookReader.removeBook(book2);
 
         System.out.println("Remove books test (list check)(not null) : " + testResult
-                (expected.equals(real)));
+                (expected.equals(bookReader.getLibrary())));
     }
 
     void removeBookTest2() {
-        List<Book> real = new ArrayList<>();
+        BookReaderImpl bookReader = new BookReaderImpl();
         List<Book> expected = new ArrayList<>();
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
 
         expected.add(book1);
-        real.add(book1);
+        bookReader.getLibrary().add(book1);
 
-        bookReader.removeBook(new Book("Harry Potter", null), real);
+        bookReader.removeBook(new Book("Harry Potter", null));
 
         System.out.println("Remove book test (list check)(null) : " + testResult
-                (expected.equals(real)));
+                (expected.equals(bookReader.getLibrary())));
     }
 
     void removeBookTest3() {
-        List<Book> real = new ArrayList<>();
+        BookReaderImpl bookReader = new BookReaderImpl();
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
         Book book2 = new Book("Magic Academy", null);
 
-        real.add(book1);
-        real.add(book2);
+        bookReader.getLibrary().add(book1);
+        bookReader.getLibrary().add(book2);
 
         System.out.println("Remove book test (boolean result true) : " + testResult
-                (bookReader.removeBook(book1, real)));
+                (bookReader.removeBook(book1)));
         System.out.println("Remove book test(boolean result false) : " + testResult
-                (!bookReader.removeBook(book2, real)));
+                (!bookReader.removeBook(book2)));
     }
 }

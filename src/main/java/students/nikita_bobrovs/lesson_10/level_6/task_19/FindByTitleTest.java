@@ -14,9 +14,6 @@ class FindByTitleTest {
         return tester ? "OK" : "FAIL";
     }
 
-    private final BookReader bookReader = new BookReaderImpl();
-    private List<Book> bookList = new ArrayList<>();
-
     private final Book book1 = new Book("Harry Potter", "Nikolay Gogol");
     private final Book book2 = new Book("Magic Academy", "Stephane Mayer");
     private final Book book3 = new Book("Henry", "Leroy J");
@@ -27,26 +24,27 @@ class FindByTitleTest {
         bookList.add(book2);
         bookList.add(book3);
         bookList.add(book4);
-        this.bookList = bookList;
     }
 
     void findByTitleTest1() {
-        setBookList(bookList);
+        BookReaderImpl bookReader = new BookReaderImpl();
+        setBookList(bookReader.getLibrary());
 
         List<Book> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book3);
 
         System.out.println("Find book by title (not null) : " + testResult
-                (expected.equals(bookReader.findByTitle("H", bookList))));
+                (expected.equals(bookReader.findByTitle("H"))));
     }
 
     void findByTitleTest2() {
-        setBookList(bookList);
+        BookReaderImpl bookReader = new BookReaderImpl();
+        setBookList(bookReader.getLibrary());
 
         List<Book> expected = new ArrayList<>();
 
         System.out.println("Find book by title (null) : " + testResult
-                (expected.equals(bookReader.findByTitle("Bean", bookList))));
+                (expected.equals(bookReader.findByTitle("Bean"))));
     }
 }

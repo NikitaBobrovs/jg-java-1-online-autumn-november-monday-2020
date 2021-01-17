@@ -15,45 +15,46 @@ class AddBookTest {
         return tester ? "OK" : "FAIL";
     }
 
-    private final BookReader bookReader = new BookReaderImpl();
 
     void addBookTest1() {
-        BookLibrary bookLibrary = new BookLibrary();
+        BookReaderImpl bookReader = new BookReaderImpl();
         List<Book> expected = new ArrayList<>();
+
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
         Book book2 = new Book("Magic Academy", "Stephane Mayer");
         expected.add(book1);
         expected.add(book2);
 
-        bookReader.addBook(book1, bookLibrary.getLibrary());
-        bookReader.addBook(book2, bookLibrary.getLibrary());
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
 
         System.out.println("Add books test (list check)(not null) : " + testResult
-                (expected.equals(bookLibrary.getLibrary())));
+                (expected.equals(bookReader.getLibrary())));
     }
 
     void addBookTest2() {
-        BookLibrary bookLibrary = new BookLibrary();
+        BookReaderImpl bookReader = new BookReaderImpl();
         List<Book> expected = new ArrayList<>();
+
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
         Book book2 = new Book("Magic Academy", null);
         expected.add(book1);
 
-        bookReader.addBook(book1, bookLibrary.getLibrary());
-        bookReader.addBook(book2, bookLibrary.getLibrary());
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
 
         System.out.println("Add book test (list check)(null) : " + testResult
-                (expected.equals(bookLibrary.getLibrary())));
+                (expected.equals(bookReader.getLibrary())));
     }
 
     void addBookTest3() {
-        BookLibrary bookLibrary = new BookLibrary();
+        BookReaderImpl bookReader = new BookReaderImpl();
         Book book1 = new Book("Harry Potter", "Nikolay Gogol");
         Book book2 = new Book("Magic Academy", null);
 
         System.out.println("Add book test (boolean result true) : " + testResult
-                (bookReader.addBook(book1, bookLibrary.getLibrary())));
+                (bookReader.addBook(book1)));
         System.out.println("Add book test(boolean result false) : " + testResult
-                (!bookReader.addBook(book2, bookLibrary.getLibrary())));
+                (!bookReader.addBook(book2)));
     }
 }

@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 class BookReaderImpl implements BookReader {
+    private final List<Book> library = new ArrayList<>();
+
+    public List<Book> getLibrary() {
+        return library;
+    }
 
     private boolean containsTitleAuthor(Book book) {
         return book.getTitle() != null && book.getAuthor() != null;
-    }
-
-    private void print(Book value) {
-        System.out.println(value.getTitle() + " [ " + value.getAuthor() + " ].");
     }
 
     private boolean isNewInLibrary(Book book, List<Book> library) {
@@ -24,10 +25,10 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean addBook(Book book, List<Book> library) {
+    public boolean addBook(Book book) {
         if (containsTitleAuthor(book)) {
-            if (isNewInLibrary(book, library)) {
-                library.add(book);
+            if (isNewInLibrary(book, this.library)) {
+                this.library.add(book);
                 return true;
             }
         }
@@ -35,10 +36,10 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean removeBook(Book book, List<Book> library) {
+    public boolean removeBook(Book book) {
         if (containsTitleAuthor(book)) {
-            if (!isNewInLibrary(book, library)) {
-                library.remove(book);
+            if (!isNewInLibrary(book, this.library)) {
+                this.library.remove(book);
                 return true;
             }
         }
@@ -46,16 +47,14 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printAllBooks(List<Book> library) {
-        for (Book value : library) {
-            print(value);
-        }
+    public List<Book> getAllBooks() {
+        return getLibrary();
     }
 
     @Override
-    public List<Book> findByAuthor(String author, List<Book> library) {
+    public List<Book> findByAuthor(String author) {
         List<Book> foundBooks = new ArrayList<>();
-        for (Book value : library) {
+        for (Book value : this.library) {
             if (value.getAuthor().startsWith(author)) {
                 foundBooks.add(value);
             }
@@ -64,9 +63,9 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public List<Book> findByTitle(String title, List<Book> library) {
+    public List<Book> findByTitle(String title) {
         List<Book> foundBooks = new ArrayList<>();
-        for (Book value : library) {
+        for (Book value : this.library) {
             if (value.getTitle().startsWith(title)) {
                 foundBooks.add(value);
             }
@@ -75,8 +74,8 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean isRead(String title, String author, List<Book> library) {
-        for (Book value : library) {
+    public boolean setRead(String title, String author) {
+        for (Book value : this.library) {
             if (value.getTitle().equalsIgnoreCase(title) && value.getAuthor().equalsIgnoreCase(author)) {
                 value.setRead(true);
                 return true;
@@ -86,8 +85,8 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean isNotRead(String title, String author, List<Book> library) {
-        for (Book value : library) {
+    public boolean setNotRead(String title, String author) {
+        for (Book value : this.library) {
             if (value.getTitle().equalsIgnoreCase(title) && value.getAuthor().equalsIgnoreCase(author)) {
                 value.setNotRead(true);
                 return true;
@@ -98,20 +97,24 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printReadBooks(List<Book> library) {
-        for (Book value : library) {
+    public List<Book> getReadBooks() {
+        List<Book> foundBooks = new ArrayList<>();
+        for (Book value : this.library) {
             if (value.isRead()) {
-                print(value);
+                foundBooks.add(value);
             }
         }
+        return foundBooks;
     }
 
     @Override
-    public void printNotReadBooks(List<Book> library) {
-        for (Book value : library) {
+    public List<Book> getNotReadBooks() {
+        List<Book> foundBooks = new ArrayList<>();
+        for (Book value : this.library) {
             if (value.isNotRead()) {
-                print(value);
+                foundBooks.add(value);
             }
         }
+        return foundBooks;
     }
 }

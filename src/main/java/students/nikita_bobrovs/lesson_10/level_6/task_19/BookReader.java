@@ -3,21 +3,21 @@ package students.nikita_bobrovs.lesson_10.level_6.task_19;
 import java.util.List;
 
 public interface BookReader {
-    boolean addBook(Book book, List<Book> library);
+    boolean addBook(Book book);
 
-    boolean removeBook(Book book, List<Book> library);
+    boolean removeBook(Book book);
 
-    void printAllBooks(List<Book> library);
+    List<Book> getAllBooks();
 
-    List<Book> findByAuthor(String author, List<Book> library);
+    List<Book> findByAuthor(String author);
 
-    List<Book> findByTitle(String title, List<Book> library);
+    List<Book> findByTitle(String title);
 
-    boolean isRead(String title, String author, List<Book> library);
+    boolean setRead(String title, String author);
 
-    boolean isNotRead(String title, String author, List<Book> library);
+    boolean setNotRead(String title, String author);
 
-    void printReadBooks(List<Book> library);
+    List<Book> getReadBooks();
 
-    void printNotReadBooks(List<Book> library);
+    List<Book> getNotReadBooks();
 }

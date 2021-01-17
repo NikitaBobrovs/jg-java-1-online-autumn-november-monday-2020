@@ -3,11 +3,11 @@ package students.nikita_bobrovs.lesson_10.level_6.task_19;
 import java.util.ArrayList;
 import java.util.List;
 
-class FindByAuthorTest {
+class GetNotReadBooksTest {
     public static void main(String[] args) {
-        FindByAuthorTest findByAuthorTest = new FindByAuthorTest();
-        findByAuthorTest.findByAuthorTest1();
-        findByAuthorTest.findByAuthorTest2();
+        GetNotReadBooksTest getNotReadBooksTest = new GetNotReadBooksTest();
+        getNotReadBooksTest.getNotReadBooksTest1();
+        getNotReadBooksTest.getNotReadBooksTest2();
     }
 
     private String testResult(boolean tester) {
@@ -26,7 +26,9 @@ class FindByAuthorTest {
         bookList.add(book4);
     }
 
-    void findByAuthorTest1() {
+    void getNotReadBooksTest1() {
+        book3.setNotRead(true);
+        book4.setNotRead(true);
         BookReaderImpl bookReader = new BookReaderImpl();
         setBookList(bookReader.getLibrary());
 
@@ -34,17 +36,19 @@ class FindByAuthorTest {
         expected.add(book3);
         expected.add(book4);
 
-        System.out.println("Find book by author (not null) : " + testResult
-                (expected.equals(bookReader.findByAuthor("Leroy"))));
+        System.out.println("Get read books (not null) : " + testResult
+                (expected.equals(bookReader.getNotReadBooks())));
     }
 
-    void findByAuthorTest2() {
+    void getNotReadBooksTest2() {
+        book3.setNotRead(false);
+        book4.setNotRead(false);
         BookReaderImpl bookReader = new BookReaderImpl();
         setBookList(bookReader.getLibrary());
 
         List<Book> expected = new ArrayList<>();
 
         System.out.println("Find book by author (null) : " + testResult
-                (expected.equals(bookReader.findByAuthor("Sarah"))));
+                (expected.equals(bookReader.getNotReadBooks())));
     }
 }
