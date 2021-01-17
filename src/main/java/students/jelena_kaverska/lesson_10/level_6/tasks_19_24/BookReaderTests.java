@@ -1,6 +1,7 @@
 package students.jelena_kaverska.lesson_10.level_6.tasks_19_24;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 class BookReaderTests {
@@ -93,6 +94,43 @@ class BookReaderTests {
         System.out.println("Mark as unread non-existing book: " + printResults(exp == act));
     }
 
+    void testReadBooks() {
+        Book book1 = new Book("Poirot 1", "Agatha Christie");
+        Book book2 = new Book("Atlas Shrugged", "Ayn Rand");
+        Book book3 = new Book("Poirot 2", "Agatha Christie");
+        book1.setRead(true);
+        book2.setRead(true);
+        book3.setRead(false);
+        List<Book> exp = new ArrayList<>(List.of(book2, book1));
+        bookReader = new BookReaderImpl();
+        bookReader.add(book1);
+        bookReader.add(book2);
+        bookReader.add(book3);
+        List<Book> act = bookReader.getAllReadBooks();
+        exp.sort(Comparator.comparing(Book::getTitle));
+        act.sort(Comparator.comparing(Book::getTitle));
+        System.out.println("Only read books: " + printResults(exp.equals(act)));
+    }
+
+    void testUnReadBooks() {
+        Book book1 = new Book("Poirot 1", "Agatha Christie");
+        Book book2 = new Book("Atlas Shrugged", "Ayn Rand");
+        Book book3 = new Book("Poirot 2", "Agatha Christie");
+        book1.setRead(true);
+        book2.setRead(true);
+        book3.setRead(false);
+        List<Book> exp = new ArrayList<>(List.of(book3));
+        bookReader = new BookReaderImpl();
+        bookReader.add(book1);
+        bookReader.add(book2);
+        bookReader.add(book3);
+        List<Book> act = bookReader.getAllUnReadBooks();
+        exp.sort(Comparator.comparing(Book::getTitle));
+        act.sort(Comparator.comparing(Book::getTitle));
+        System.out.println("Only unread books: " + printResults(exp.equals(act)));
+    }
+
+
     public static void main(String[] args) {
         BookReaderTests tests = new BookReaderTests();
         tests.testFindByTitleOneBook();
@@ -104,5 +142,7 @@ class BookReaderTests {
         tests.testMarkAsUnRead();
         tests.testMarkAsUnReadAlreadyUnRead();
         tests.testMarkAsUnReadNonExisting();
+        tests.testReadBooks();
+        tests.testUnReadBooks();
     }
 }

@@ -9,7 +9,7 @@ interface BookReader {
     //удаление книги из электронной библиотеки
     boolean delete(Book book);
 
-    void printAllBooks();
+    List<Book> getAllBooks();
 
     List<Book> findByAuthor(String author);
 
@@ -19,8 +19,8 @@ interface BookReader {
 
     boolean markAsUnRead(Book book);
 
-    void printReadBooks();
+    List<Book> getAllReadBooks();
 
-    void printUnReadBooks();
+    List<Book> getAllUnReadBooks();
 
 }

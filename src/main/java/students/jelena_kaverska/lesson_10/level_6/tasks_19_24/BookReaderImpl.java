@@ -6,10 +6,6 @@ import java.util.List;
 class BookReaderImpl implements BookReader {
     private List<Book> books = new ArrayList<>();
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
     //в электронную библиотеку уствойства нельзя добавлять
     //одинаковые книги (книги у которых автор и название совпадают)
     @Override
@@ -32,15 +28,8 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printAllBooks() {
-        if (!books.isEmpty()) {
-            for (Book book : books) {
-                System.out.print(book.getTitle() + "[" + book.getAuthor() + "] ");
-            }
-            System.out.println();
-        } else {
-            System.out.println("[]");
-        }
+    public List<Book> getAllBooks() {
+        return books;
     }
 
     @Override
@@ -96,39 +85,25 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printReadBooks() {
+    public List<Book> getAllReadBooks() {
         List<Book> read = new ArrayList<>();
         for (Book book : books) {
             if (book.isRead()) {
                 read.add(book);
             }
         }
-        if (!read.isEmpty()) {
-            for (Book book : read) {
-                System.out.print(book.getTitle() + "[" + book.getAuthor() + "] ");
-            }
-            System.out.println();
-        } else {
-            System.out.println("[]");
-        }
+        return read;
     }
 
     @Override
-    public void printUnReadBooks() {
+    public List<Book> getAllUnReadBooks() {
         List<Book> unread = new ArrayList<>();
         for (Book book : books) {
             if (!book.isRead()) {
                 unread.add(book);
             }
         }
-        if (!unread.isEmpty()) {
-            for (Book book : unread) {
-                System.out.print(book.getTitle() + "[" + book.getAuthor() + "] ");
-            }
-            System.out.println();
-        } else {
-            System.out.println("[]");
-        }
+        return unread;
     }
 }
 
@@ -138,22 +113,18 @@ class MyDemo {
         Book book1 = new Book("Poirot 1", "Agatha Christie");
         Book book2 = new Book("Poirot 2", "Agatha Christie");
         Book book3 = new Book("Atlas Shrugged", "Ayn Rand");
-
-        br.printAllBooks();
+        System.out.println(br.getAllBooks());
         br.add(book1);
-        br.printAllBooks();
         br.add(book2);
         br.add(book3);
-        br.printAllBooks();
-        br.printUnReadBooks();
-        br.printReadBooks();
-        br.markAsRead(book1);
-        br.printAllBooks();
-        br.printReadBooks();
-        br.printUnReadBooks();
+        System.out.println(br.getAllBooks());
+        System.out.println(br.getAllUnReadBooks());
+
+        System.out.println(br.markAsRead(book1));
+        System.out.println(br.getAllBooks());
         System.out.println(br.markAsRead(book3));
-        br.printAllBooks();
-        br.printReadBooks();
-        br.printUnReadBooks();
+
+        System.out.println("all read: " + br.getAllReadBooks());
+        System.out.println("all unread: " + br.getAllUnReadBooks());
     }
 }
