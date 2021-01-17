@@ -1,10 +1,11 @@
 package students.jelena_kaverska.lesson_10.level_3.task_8;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 class InMemoryDatabase implements ProductDatabase {
     //хранить продукты в памяти используя для этого массив
-    private Product[] products = new Product[1];
+    private Product[] products = new Product[]{};
 
     public Product[] getProducts() {
         return products;
@@ -14,9 +15,8 @@ class InMemoryDatabase implements ProductDatabase {
     @Override
     public void save(Product product) {
         //создаём новый массив длиннее предыдущего на 1
-        Product[] productsNew = new Product[products.length + 1];
         //копируем все содержимое сторого массива в новый
-        productsNew = Arrays.copyOf(products, productsNew.length);
+        Product[] productsNew = Arrays.copyOf(products, products.length + 1);
         //в последнюю ячейку нового массива сохраняем новый продукт
         productsNew[productsNew.length - 1] = product;
         products = Arrays.copyOf(productsNew, products.length + 1);
@@ -33,6 +33,15 @@ class InMemoryDatabase implements ProductDatabase {
             }
         }
         return null;
+    }
+
+    public Optional<Product> findByTitle2(String productTitle) {
+        for (Product product : products) {
+            if (product.getTitle().equals(productTitle)) {
+                return Optional.of(product);
+            }
+        }
+        return Optional.empty();
     }
 
     void printProducts2() {
@@ -70,6 +79,9 @@ class My {
         System.out.println("Find bbbb: " + db.findByTitle("bbbb"));
         System.out.println("Find bbb: " + db.findByTitle("bbb"));
         System.out.println("Find ccc: " + db.findByTitle("ccc"));
+        db.save(new Product("qqqqq"));
+        db.printProducts2();
 
+        System.out.println(db.findByTitle2("ссс"));
     }
 }
