@@ -1,8 +1,8 @@
-package students.jana_sergejenko.lesson_10.level_2.task_4;
+package students.jana_sergejenko.lesson_10.level_2.task_4_5;
 
-public class DemoArray {
+public class Demo {
     public static void main(String[] args) {
-        DemoArray test = new DemoArray();
+        Demo test = new Demo();
         test.scenario1();
         test.scenario2();
         test.scenario3();
@@ -17,25 +17,24 @@ public class DemoArray {
     }
 
     public void scenario1() {
-        DayofTheWeekDetectorArray test = new DayofTheWeekDetectorArray();
+        DayOfTheWeekDetectorIfVersion test = new DayOfTheWeekDetectorIfVersion();
         String result = test.detectDayName(3);
-        String expected = "Tuesday";
+        String expected = "Wednesday";
         System.out.println("Days Of The Week Test result " + checkResult(result, expected));
     }
 
     public void scenario2() {
-        DayofTheWeekDetectorArray test = new DayofTheWeekDetectorArray();
+        DayOfTheWeekDetectorIfVersion test = new DayOfTheWeekDetectorIfVersion();
         String result = test.detectDayName(5);
-        String expected = "Thursday";
+        String expected = "Friday";
         System.out.println("Days Of The Week Test result " + checkResult(result, expected));
     }
 
     public void scenario3() {
-        DayofTheWeekDetectorArray test = new DayofTheWeekDetectorArray();
+        DayOfTheWeekDetectorIfVersion test = new DayOfTheWeekDetectorIfVersion();
         String result = test.detectDayName(9);
         String expected = "Please input a valid number between 1 and 7";
         System.out.println("Days Of The Week Test result " + checkResult(result, expected));
     }
 
 }
-
