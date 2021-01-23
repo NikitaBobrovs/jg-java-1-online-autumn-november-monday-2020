@@ -1,6 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_3.task_8;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class InMemoryDatabase implements ProductDatabase {
 
@@ -32,6 +33,18 @@ public class InMemoryDatabase implements ProductDatabase {
         }
         return null;
     }
+    @Override
+    public Optional<Product> findByTitle2(String productTitle) {
+
+        for (Product product : products) {
+            if (product.getTitle().equals(productTitle)) {
+                return Optional.of(product);
+            }
+        }
+        return Optional.empty();
+    }
+
+
 
     public static void main(String[] args) {
         ProductDatabase test = new InMemoryDatabase();
@@ -41,7 +54,6 @@ public class InMemoryDatabase implements ProductDatabase {
         test.save(product1);
         System.out.println(test.findByTitle("Pencil"));
         test.printAll();
-
 
     }
 
