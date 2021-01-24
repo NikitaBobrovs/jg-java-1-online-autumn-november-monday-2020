@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_10.level_5.task_13;
+package students.jana_sergejenko.lesson_10.level_5.task_13_18;
 
 public interface BookReader {
     boolean save(Book book);
