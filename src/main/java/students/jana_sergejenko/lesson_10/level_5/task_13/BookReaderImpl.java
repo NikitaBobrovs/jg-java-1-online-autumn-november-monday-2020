@@ -9,9 +9,11 @@ public class BookReaderImpl implements BookReader {
     @Override
     public boolean save(Book book) {
         if (!findByTitleAndAuthor(book.getTitle(), book.getAuthor())) {
-            books[i] = book;
-            i++;
-            return true;
+            if((book.getTitle()!=" ")&&(book.getAuthor()!=" ")) {
+                books[i] = book;
+                i++;
+                return true;
+            }
         }
         return false;
     }

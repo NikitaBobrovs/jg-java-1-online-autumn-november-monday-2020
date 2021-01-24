@@ -5,6 +5,8 @@ public class Demo {
         Demo demo = new Demo();
         demo.scenario1();
         demo.scenario2();
+        demo.scenario3();
+        demo.scenario4();
     }
 
     public String checkResult(boolean result, boolean expected) {
@@ -31,6 +33,30 @@ public class Demo {
         final Book book2 = new Book("Becoming", "Michelle Obama");
         test.save(book);
         boolean result = test.save(book2);
+        boolean expected = false;
+        System.out.println("test" + checkResult(result, expected));
+        test.printAll();
+    }
+    public void scenario3() {
+        BookReader test = new BookReaderImpl();
+        final Book book = new Book("Becoming", "Michelle Obama");
+        final Book book2 = new Book("Becoming", "Michelle Obama");
+        final Book book3 = new Book(" ", " ");
+        test.save(book);
+        test.save(book2);
+        boolean result = test.save(book3);
+        boolean expected = false;
+        System.out.println("test" + checkResult(result, expected));
+        test.printAll();
+    }
+    public void scenario4() {
+        BookReader test = new BookReaderImpl();
+        final Book book = new Book("Becoming", "Michelle Obama");
+        final Book book2 = new Book("Becoming", "Michelle Obama");
+        final Book book3 = new Book("Game", " ");
+        test.save(book);
+        test.save(book2);
+        boolean result = test.save(book3);
         boolean expected = false;
         System.out.println("test" + checkResult(result, expected));
         test.printAll();
