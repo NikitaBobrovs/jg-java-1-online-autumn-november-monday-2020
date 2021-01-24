@@ -8,4 +8,6 @@ public interface BookReader {
     boolean findByTitleAndAuthor(String title, String author);
 
     boolean delete(Book book);
+
+   Book findByAuthor(String author);
 }

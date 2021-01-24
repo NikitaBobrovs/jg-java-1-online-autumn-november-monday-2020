@@ -46,6 +46,16 @@ public class BookReaderImpl implements BookReader {
         return false;
     }
 
+    @Override
+    public Book findByAuthor(String author){
+        for(Book book:books){
+            if(book != null&&book.getAuthor().equals(author)){
+                return book;
+            }
+        }
+        return null;
+    }
+
 
 
     public static void main(String[] args) {
@@ -57,6 +67,8 @@ public class BookReaderImpl implements BookReader {
         test.printAll();
         test.delete(book);
         test.printAll();
+        System.out.println(test.findByAuthor("Michelle Obama"));
+        System.out.println(test.findByAuthor("Michelle James"));
 
         /*test.printAll();
         Book book2 = new Book("American Grown", "James Green");
