@@ -73,6 +73,15 @@ public class BookReaderImpl implements BookReader {
         }
         return null;
     }
+    @Override
+    public Book findByTitle2(String title){
+        for(Book book:books){
+            if(book != null&&book.getTitle().contains(title)){
+                return book;
+            }
+        }
+        return null;
+    }
 
 
     public static void main(String[] args) {

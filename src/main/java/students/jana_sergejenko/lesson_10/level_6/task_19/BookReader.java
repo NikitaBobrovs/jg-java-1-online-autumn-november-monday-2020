@@ -14,4 +14,6 @@ public interface BookReader {
     Book findByAuthor2(String author);
 
     Book findByTitle(String title);
+
+    Book findByTitle2(String title);
 }

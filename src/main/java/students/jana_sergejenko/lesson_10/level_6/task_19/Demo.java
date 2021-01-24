@@ -15,6 +15,7 @@ public class Demo {
         demo.scenario10();
         demo.scenario11();
         demo.scenario12();
+        demo.scenario13();
     }
 
     public String checkResult(boolean result, boolean expected) {
@@ -153,6 +154,14 @@ public class Demo {
         Book result=test.findByTitle("Becoming true");
         Book expected=null;
         System.out.println("Find by title test" + checkResult2(result, expected));
+    }
+    public void scenario13() {
+        BookReader test = new BookReaderImpl();
+        final Book book = new Book("Becoming tur person", "Michelle Obama");
+        test.save(book);
+        Book result=test.findByTitle2("Becoming");
+        Book expected=book;
+        System.out.println("Find by Title CONTAINS test" + checkResult2(result, expected));
     }
 }
 
