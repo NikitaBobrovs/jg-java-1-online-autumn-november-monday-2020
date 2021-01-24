@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_10.level_2.task_4;
+package students.jana_sergejenko.lesson_10.level_2.task_4_5;
 
 public class DayofTheWeekDetectorSwitch implements DayOfTheWeekDetector {
 
