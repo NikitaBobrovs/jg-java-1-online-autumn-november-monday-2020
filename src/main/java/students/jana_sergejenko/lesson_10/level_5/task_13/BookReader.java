@@ -9,5 +9,7 @@ public interface BookReader {
 
     boolean delete(Book book);
 
-   Book findByAuthor(String author);
+    Book findByAuthor(String author);
+
+    Book findByAuthor2(String author);
 }

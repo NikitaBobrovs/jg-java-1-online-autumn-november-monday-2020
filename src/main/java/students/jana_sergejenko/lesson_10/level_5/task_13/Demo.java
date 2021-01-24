@@ -11,6 +11,8 @@ public class Demo {
         demo.scenario6();
         demo.scenario7();
         demo.scenario8();
+        demo.scenario9();
+        demo.scenario10();
     }
 
     public String checkResult(boolean result, boolean expected) {
@@ -117,5 +119,21 @@ public class Demo {
         Book result=test.findByAuthor("Michelle James");
         Book expected=null;
         System.out.println("Find test" + checkResult2(result, expected));
+    }
+    public void scenario9() {
+        BookReader test = new BookReaderImpl();
+        final Book book = new Book("Becoming", "Michelle Obama");
+        test.save(book);
+        Book result=test.findByAuthor2("Obama");
+        Book expected=book;
+        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
+    }
+    public void scenario10() {
+        BookReader test = new BookReaderImpl();
+        final Book book = new Book("Becoming", "Michelle Obama");
+        test.save(book);
+        Book result=test.findByAuthor2("Michelle Obama");
+        Book expected=book;
+        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
     }
 }
