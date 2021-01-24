@@ -31,21 +31,43 @@ public class BookReaderImpl implements BookReader {
         }
         return false;
     }
+    @Override
+    public boolean delete(Book book) {
+        int i = 0;
+        for (i = 0; i < books.length; i++) {
+            if (findByTitleAndAuthor(book.getTitle(), book.getAuthor())) {
+                books[i] = null;
+                return true;
+            }
+            break;
+
+        }
+
+        return false;
+    }
+
 
 
     public static void main(String[] args) {
         BookReader test = new BookReaderImpl();
         Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        test.printAll();
-        Book book1 = new Book("Becoming", "Michelle Obama");
+        Book book1 = new Book("One way", "Michelle Obama");
         test.save(book1);
         test.printAll();
+        test.delete(book);
+        test.printAll();
+
+        /*test.printAll();
         Book book2 = new Book("American Grown", "James Green");
         test.save(book2);
         test.printAll();
         Book book3 = new Book("One way", "James Green");
         test.save(book3);
         test.printAll();
+        Book book4 = new Book("Becoming", "Michelle Obama");
+        test.delete(book);
+        System.out.println(test.findByTitleAndAuthor("Becoming", "Michelle Obama"));
+        test.printAll();*/
     }
 }

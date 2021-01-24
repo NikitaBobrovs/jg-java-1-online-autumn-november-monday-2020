@@ -7,6 +7,8 @@ public class Demo {
         demo.scenario2();
         demo.scenario3();
         demo.scenario4();
+        demo.scenario5();
+        demo.scenario6();
     }
 
     public String checkResult(boolean result, boolean expected) {
@@ -60,5 +62,30 @@ public class Demo {
         boolean expected = false;
         System.out.println("test" + checkResult(result, expected));
         test.printAll();
+    }
+    public void scenario5() {
+        BookReader test = new BookReaderImpl();
+        Book book = new Book("Becoming", "Michelle Obama");
+        test.save(book);
+        Book book1 = new Book("One way", "Michelle Obama");
+        test.save(book1);
+        test.printAll();
+        boolean result = test.delete(book);
+        boolean expected = true;
+        System.out.println("DELETE test" + checkResult(result, expected));
+    }
+    public void scenario6() {
+        BookReader test = new BookReaderImpl();
+        Book book = new Book("Becoming", "Michelle Obama");
+        test.save(book);
+        Book book1 = new Book("One way", "Michelle Obama");
+        Book book2 = new Book("Road", "James White");
+        test.save(book1);
+        test.printAll();
+        boolean result = test.delete(book2);
+        boolean expected = false;
+        System.out.println(test.findByTitleAndAuthor("Road", "James White"));
+        System.out.println(test.delete(book2));
+        System.out.println("DELETE test" + checkResult(result, expected));
     }
 }

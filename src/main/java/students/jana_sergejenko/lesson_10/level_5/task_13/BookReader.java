@@ -6,4 +6,6 @@ public interface BookReader {
     void printAll();
 
     boolean findByTitleAndAuthor(String title, String author);
+
+    boolean delete(Book book);
 }
