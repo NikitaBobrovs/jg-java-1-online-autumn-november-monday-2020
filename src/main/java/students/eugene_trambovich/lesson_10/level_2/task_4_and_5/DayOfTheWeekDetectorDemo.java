@@ -21,5 +21,6 @@ class DayOfTheWeekDetectorDemo {
     public static void main(String[] args) {
         new DayOfTheWeekDetectorDemo(new DayOfTheWeekDetectorIfVersion()).run();
         new DayOfTheWeekDetectorDemo(new DayOfTheWeekDetectorSwitchVersion()).run();
+        new DayOfTheWeekDetectorDemo(new DayOfTheWeekDetectorArrayVersion()).run();
     }
 }
