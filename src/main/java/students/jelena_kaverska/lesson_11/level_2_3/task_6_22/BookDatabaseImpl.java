@@ -1,4 +1,4 @@
-package students.jelena_kaverska.lesson_11.level_2.task_6_14;
+package students.jelena_kaverska.lesson_11.level_2_3.task_6_22;
 
 import java.util.*;
 
@@ -10,9 +10,9 @@ class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Long save(Book book) {
-        books.add(book);
         bookId++;
-        book.setId(bookId);
+        Book copy = new Book(bookId, book.getAuthor(), book.getTitle());
+        books.add(copy);
         return bookId;
     }
 
@@ -80,7 +80,25 @@ class BookDatabaseImpl implements BookDatabase {
         books.removeIf(book -> book.getTitle().equalsIgnoreCase(title));
     }
 
-    public List<Book> findByAuthor1(String author) {
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> results = new ArrayList<>();
+        for (Book book : books) {
+            if (searchCriteria.match(book)) {
+                results.add(book);
+            }
+        }
+        return results;
+    }
+
+    public List<Book> find1(SearchCriteria searchCriteria) {
+        return books.stream()
+                .filter(searchCriteria::match)
+                .collect(toList());
+    }
+
+
+        public List<Book> findByAuthor1(String author) {
         return books.stream()
                 .filter(b -> b.getAuthor().equalsIgnoreCase(author))
                 .collect(toList());

@@ -1,4 +1,4 @@
-package students.jelena_kaverska.lesson_11.level_2.task_6_14;
+package students.jelena_kaverska.lesson_11.level_2_3.task_6_22;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,4 +22,5 @@ interface BookDatabase {
 
     void deleteByTitle(String title);
 
+    List<Book> find(SearchCriteria searchCriteria);
 }
