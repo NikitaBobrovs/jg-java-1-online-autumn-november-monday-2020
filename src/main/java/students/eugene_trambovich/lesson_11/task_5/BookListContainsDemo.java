@@ -24,7 +24,7 @@ class BookListContainsDemo {
 
         Book bookNotInTheList = new Book("A3", "B3");
         boolean notContainsBook = bookListContainsDemo.books.contains(bookNotInTheList); // должно быть false
-
+        System.out.println(containsBook);
+        System.out.println(notContainsBook);
     }
-
 }
