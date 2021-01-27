@@ -1,7 +1,9 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase;
+package students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria;
+
+import students.nikita_bobrovs.lesson_11.BookDatabase.Book;
 
 class TitleSearchCriteria implements SearchCriteria {
-    private String titleToSearch;
+    private final String titleToSearch;
 
     public TitleSearchCriteria(String titleToSearch) {
         this.titleToSearch = titleToSearch;

@@ -17,10 +17,12 @@ class BookDatabaseTests {
         databaseTests.countAllBooksTest1();
         databaseTests.deleteByAuthorTest1();
         databaseTests.deleteByTitleTest1();
-        databaseTests.containsTest1();
         databaseTests.findUniqueAuthorsTest1();
         databaseTests.findUniqueTitlesTest1();
         databaseTests.findUniqueBooksTest1();
+        databaseTests.containsTest1();
+        databaseTests.getAuthorToBooksMapTest1();
+        databaseTests.getEachAuthorBookCountTest1();
     }
 
     private String result(boolean test) {
@@ -28,7 +30,7 @@ class BookDatabaseTests {
     }
 
     Book book1 = new Book("Alpha", "ANN", "1900");
-    Book book2 = new Book("Betta", "AAN", "1910");
+    Book book2 = new Book("Betta", "ANN", "1910");
     Book book3 = new Book("Gamma", "GAN", "1920");
     Book book4 = new Book("Betta", "DAN", "1930");
     Book book5 = new Book("Betta", "DAN", "1930");
@@ -77,7 +79,7 @@ class BookDatabaseTests {
         database.save(book3);
         System.out.println("Delete test(true/false) : "+result(
                 database.delete(book2) &&
-                        !(database.delete(book3))
+                        !(database.delete(book2))
         ));
     }
 
@@ -93,10 +95,9 @@ class BookDatabaseTests {
     }
 
     void findByIdTest1(){
-        List<Book> emptyList = new ArrayList<>();
         DatabaseImpl database = new DatabaseImpl();
         System.out.println("Find by id test (empty) : "+result(
-                database.findById(2L).equals(emptyList)
+                database.findById(2L).isEmpty()
         ));
     }
 
@@ -105,12 +106,8 @@ class BookDatabaseTests {
         database.save(book1);
         database.save(book2);
         database.save(book3);
-
-        List<Book> expected = new ArrayList<>();
-        expected.add(book3);
-
         System.out.println("Find by id test : "+result(
-                expected.equals(database.findById(3L))
+                database.findById(3L).get().getId()==3
         ));
     }
 
@@ -136,7 +133,7 @@ class BookDatabaseTests {
         List<Book> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book2);
-        System.out.println("Find by author test : " +result(
+        System.out.println("Find by title test : " +result(
                 expected.equals(database.findByTitle("ANN"))
         ));
     }
@@ -232,16 +229,45 @@ class BookDatabaseTests {
         ));
     }
 
-    void getAuthorToBooksMapTest(){
+    void getAuthorToBooksMapTest1(){
         Map<String, List<Book>> expected = new HashMap<>();
-        expected.put()
         DatabaseImpl database = new DatabaseImpl();
         database.save(book1);
         database.save(book2);
         database.save(book3);
         database.save(book4);
         database.save(book5);
+        expected.put("Alpha",database.findByAuthor("Alpha"));
+        expected.put("Betta",database.findByAuthor("Betta"));
+        expected.put("Gamma",database.findByAuthor("Gamma"));
+
         Map<String, List<Book>> authorToBookMap = database.getAuthorToBooksMap();
-        boolean keys;
+        System.out.println("Get author to book map test (keys) : "+result(
+                expected.keySet().equals(authorToBookMap.keySet())
+        ));
+        System.out.println("Get author to book map test (values) : "+result(
+                expected.values().containsAll(authorToBookMap.values()))
+        );
+    }
+
+    void getEachAuthorBookCountTest1(){
+        Map<String, Integer> expected = new HashMap<>();
+        DatabaseImpl database = new DatabaseImpl();
+        database.save(book1);
+        database.save(book2);
+        database.save(book3);
+        database.save(book4);
+        database.save(book5);
+        expected.put("Alpha",database.findByAuthor("Alpha").size());
+        expected.put("Betta",database.findByAuthor("Betta").size());
+        expected.put("Gamma",database.findByAuthor("Gamma").size());
+
+        Map<String, Integer> eachAuthorBookCount = database.getEachAuthorBookCount();
+        System.out.println("Get each author book count map test (keys) : "+result(
+                expected.keySet().equals(eachAuthorBookCount.keySet())
+        ));
+        System.out.println("Get each author book count map test (values) : "+result(
+                (new ArrayList<>(expected.values()).equals(new ArrayList<>(eachAuthorBookCount.values())))
+                ));
     }
 }

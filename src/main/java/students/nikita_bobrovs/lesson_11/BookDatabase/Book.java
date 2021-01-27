@@ -2,13 +2,13 @@ package students.nikita_bobrovs.lesson_11.BookDatabase;
 
 import java.util.Objects;
 
-class Book {
+public class Book {
     private final Long id;
     private final String title;
     private final String author;
     private final String yearOfIssue;
 
-    Book(String author, String title, String yearOfIssue) {
+    public Book(String author, String title, String yearOfIssue) {
         this(null, author, title, yearOfIssue);
     }
 

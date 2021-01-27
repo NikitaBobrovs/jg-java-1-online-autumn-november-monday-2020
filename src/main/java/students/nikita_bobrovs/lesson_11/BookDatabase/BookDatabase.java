@@ -1,11 +1,13 @@
 package students.nikita_bobrovs.lesson_11.BookDatabase;
 
+import students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria.SearchCriteriaRunner;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-interface BookDatabase {
+public interface BookDatabase {
     Long save(Book book);
 
     boolean deleteById(Long bookId);
@@ -24,7 +26,7 @@ interface BookDatabase {
 
     void deleteByTitle(String title);
 
-    List<Book> find(SearchCriteria searchCriteria);
+    List<Book> find(SearchCriteriaRunner searchCriteria);
 
     Set<String> findUniqueAuthors();
 

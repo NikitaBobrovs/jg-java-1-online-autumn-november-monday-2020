@@ -1,7 +1,9 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase;
+package students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria;
 
-class AuthorSearchCriteria implements SearchCriteria{
-    private String authorToSearch;
+import students.nikita_bobrovs.lesson_11.BookDatabase.Book;
+
+class AuthorSearchCriteria implements SearchCriteria {
+    private final String authorToSearch;
 
     public AuthorSearchCriteria(String authorToSearch) {
         this.authorToSearch = authorToSearch;
