@@ -1,6 +1,4 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase;
-
-import students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria.SearchCriteriaRunner;
+package students.nikita_bobrovs.lesson_11.book_database;
 
 import java.util.List;
 import java.util.Map;
@@ -26,7 +24,7 @@ public interface BookDatabase {
 
     void deleteByTitle(String title);
 
-    List<Book> find(SearchCriteriaRunner searchCriteria);
+    List<Book> find(SearchCriteria searchCriteria);
 
     Set<String> findUniqueAuthors();
 

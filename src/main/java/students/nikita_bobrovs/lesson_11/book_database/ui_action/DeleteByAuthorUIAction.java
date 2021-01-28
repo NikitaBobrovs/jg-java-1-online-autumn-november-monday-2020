@@ -1,6 +1,7 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase.UIAction;
+package students.nikita_bobrovs.lesson_11.book_database.ui_action;
 
-import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
+import students.nikita_bobrovs.lesson_11.book_database.BookDatabase;
+import students.nikita_bobrovs.lesson_11.book_database.UIAction;
 
 import java.util.Scanner;
 

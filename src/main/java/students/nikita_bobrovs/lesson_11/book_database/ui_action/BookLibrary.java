@@ -1,7 +1,8 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase.UIAction;
+package students.nikita_bobrovs.lesson_11.book_database.ui_action;
 
-import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
-import students.nikita_bobrovs.lesson_11.BookDatabase.DatabaseImpl;
+import students.nikita_bobrovs.lesson_11.book_database.BookDatabase;
+import students.nikita_bobrovs.lesson_11.book_database.DatabaseImpl;
+import students.nikita_bobrovs.lesson_11.book_database.UIAction;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,29 +32,32 @@ public class BookLibrary {
     }
 
     public void run() {
-        System.out.println("Welcome!");
-        System.out.print("""
-                Main Menu Options :\s
-                        0  = Exit
-                        1  = Save Book
-                        2  = Find By Id
-                        3  = Find By Author
-                        4  = Find By Title
-                        5  = Find Unique Books
-                        6  = Find Unique Authors
-                        7  = Find Unique Titles
-                        8  = Delete By Id
-                        9  = Delete Book
-                        10 = Delete By Author
-                        11 = Delete By Title
-                        12 = Count all books
-                        13 = Search criteria
-                        """);
+        System.out.println("Welcome! \n ");
+        System.out.print("Main Menu Options : \n" +"\n"+
+                        "0  = Exit \n" +
+                        "1  = Save Book \n" +
+                        "2  = Find By Id \n" +
+                        "3  = Find By Author \n" +
+                        "4  = Find By Title \n" +
+                        "5  = Find Unique Books \n" +
+                        "6  = Find Unique Authors \n" +
+                        "7  = Find Unique Titles \n" +
+                        "8  = Delete By Id \n" +
+                        "9  = Delete Book \n" +
+                        "10 = Delete By Author \n" +
+                        "11 = Delete By Title \n" +
+                        "12 = Count all books \n" +
+                        "13 = Search criteria\n"+"\n");
+
         Scanner sc = new Scanner(System.in);
 
         while (true) {
             System.out.println("Please enter menu number: ");
-            int userSelectedMenuNumber = Integer.parseInt(sc.nextLine());
+            while (!sc.hasNextInt()){
+                sc.nextLine();
+                System.out.println("Letters not accepted.Please input numbers : ");
+            }
+            int userSelectedMenuNumber = sc.nextInt();
             if (userSelectedMenuNumber == 0) {
                 System.out.println("Thank you! Good by!");
                 break;
@@ -68,7 +72,7 @@ public class BookLibrary {
         if (uiAction != null) {
             uiAction.execute();
         } else {
-            System.out.println("Menu item not exist: " + userSelectedMenuNumber);
+            System.out.println("Entered number does not exist in menu.");
         }
     }
 

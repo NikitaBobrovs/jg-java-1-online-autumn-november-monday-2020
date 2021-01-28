@@ -1,6 +1,4 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase;
-
-import students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria.SearchCriteriaRunner;
+package students.nikita_bobrovs.lesson_11.book_database;
 
 import java.util.*;
 
@@ -75,7 +73,7 @@ public class DatabaseImpl implements BookDatabase {
 
 
     @Override
-    public List<Book> find(SearchCriteriaRunner searchCriteria) {
+    public List<Book> find(SearchCriteria searchCriteria) {
         List<Book> bySearchCriteria = new ArrayList<>();
         for (Book book : bookList) {
             if (searchCriteria.match(book)) {

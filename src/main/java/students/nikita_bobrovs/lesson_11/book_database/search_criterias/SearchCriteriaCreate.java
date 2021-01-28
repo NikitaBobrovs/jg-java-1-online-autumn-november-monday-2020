@@ -1,15 +1,16 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria;
+package students.nikita_bobrovs.lesson_11.book_database.search_criterias;
 
-import students.nikita_bobrovs.lesson_11.BookDatabase.Book;
+import students.nikita_bobrovs.lesson_11.book_database.Book;
+import students.nikita_bobrovs.lesson_11.book_database.SearchCriteria;
 
-public class SearchCriteriaCreate implements SearchCriteriaRunner {
+public class SearchCriteriaCreate{
     Book bookSrc;
     private final int userChosenCriteria;
     private final int userChosenParameter1;
     private final int userChosenParameter2;
-    YearOfIssueSearchCriteria yearOfIssueSearchCriteria;
-    TitleSearchCriteria titleSearchCriteria;
-    AuthorSearchCriteria authorSearchCriteria;
+    private final YearOfIssueSearchCriteria yearOfIssueSearchCriteria;
+    private final TitleSearchCriteria titleSearchCriteria;
+    private final AuthorSearchCriteria authorSearchCriteria;
 
     public SearchCriteriaCreate(Book book,
                                 int userChosenCriteria,
@@ -25,7 +26,7 @@ public class SearchCriteriaCreate implements SearchCriteriaRunner {
         this.yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(bookSrc.getYearOfIssue());
     }
 
-    SearchCriteria parameter1() {
+    private SearchCriteria parameter1() {
         if (this.userChosenParameter1 == 1) {
             return authorSearchCriteria;
         } else if (this.userChosenParameter1 == 2) {
@@ -35,7 +36,7 @@ public class SearchCriteriaCreate implements SearchCriteriaRunner {
         }
     }
 
-    SearchCriteria parameter2() {
+    private SearchCriteria parameter2() {
         if (this.userChosenParameter2 == 1) {
             return authorSearchCriteria;
         } else if (this.userChosenParameter2 == 2) {
@@ -45,17 +46,11 @@ public class SearchCriteriaCreate implements SearchCriteriaRunner {
         }
     }
 
-    @Override
-    public boolean build() {
+    public SearchCriteria build() {
         if (this.userChosenCriteria == 1) {
-            return new AndSearchCriteria(parameter1(), parameter2()).match(bookSrc);
+            return new AndSearchCriteria(parameter1(), parameter2());
         } else {
-            return new OrSearchCriteria(parameter1(), parameter2()).match(bookSrc);
+            return new OrSearchCriteria(parameter1(), parameter2());
         }
-    }
-
-    @Override
-    public boolean match(Book book) {
-        return build();
     }
 }

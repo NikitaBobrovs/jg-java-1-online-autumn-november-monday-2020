@@ -1,4 +1,4 @@
-package students.nikita_bobrovs.lesson_11.BookDatabase;
+package students.nikita_bobrovs.lesson_11.book_database;
 
 import java.util.*;
 
