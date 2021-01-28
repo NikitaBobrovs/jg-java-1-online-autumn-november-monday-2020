@@ -1,21 +1,12 @@
-package students.jelena_kaverska.lesson_11.level_2.task_6_14;
+package students.jelena_kaverska.lesson_11.level_1.task_5;
 
 class Book {
-    private Long id;
     private String title;
     private String author;
 
     Book(String author, String title) {
         this.author = author;
         this.title = title;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return this.id;
     }
 
     public String getTitle() {
@@ -42,14 +33,5 @@ class Book {
         int result = title != null ? title.hashCode() : 0;
         result = 31 * result + (author != null ? author.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                '}';
     }
 }
