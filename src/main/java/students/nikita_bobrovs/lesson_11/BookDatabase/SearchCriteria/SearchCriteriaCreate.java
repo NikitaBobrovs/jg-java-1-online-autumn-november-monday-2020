@@ -2,7 +2,7 @@ package students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria;
 
 import students.nikita_bobrovs.lesson_11.BookDatabase.Book;
 
-public class SearchCriteriaCreate implements SearchCriteriaRunner{
+public class SearchCriteriaCreate implements SearchCriteriaRunner {
     Book bookSrc;
     private final int userChosenCriteria;
     private final int userChosenParameter1;
@@ -14,8 +14,7 @@ public class SearchCriteriaCreate implements SearchCriteriaRunner{
     public SearchCriteriaCreate(Book book,
                                 int userChosenCriteria,
                                 int userChosenParameter1,
-                                int userChosenParameter2)
-    {
+                                int userChosenParameter2) {
         this.bookSrc = book;
         this.userChosenCriteria = userChosenCriteria;
         this.userChosenParameter1 = userChosenParameter1;

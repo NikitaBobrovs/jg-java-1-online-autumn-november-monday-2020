@@ -4,10 +4,10 @@ import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
 
 import java.util.Scanner;
 
-public class DeleteByAuthorUIAction implements UIAction{
+public class DeleteByAuthorUIAction implements UIAction {
     private final BookDatabase database;
 
-    DeleteByAuthorUIAction(BookDatabase database){
+    DeleteByAuthorUIAction(BookDatabase database) {
         this.database = database;
     }
 

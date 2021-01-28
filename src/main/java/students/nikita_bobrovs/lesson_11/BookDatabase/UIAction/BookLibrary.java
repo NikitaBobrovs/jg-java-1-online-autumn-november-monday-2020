@@ -23,10 +23,11 @@ public class BookLibrary {
         menuNumberToActionMap.put(6, new FindUniqueAuthorsUIAction(bookDatabase));
         menuNumberToActionMap.put(7, new FindUniqueTitlesUIAction(bookDatabase));
         menuNumberToActionMap.put(8, new DeleteByIdUIAction(bookDatabase));
-        menuNumberToActionMap.put(9,new DeleteBookUIAction(bookDatabase));
+        menuNumberToActionMap.put(9, new DeleteBookUIAction(bookDatabase));
         menuNumberToActionMap.put(10, new DeleteByAuthorUIAction(bookDatabase));
         menuNumberToActionMap.put(11, new DeleteByTitleUIAction(bookDatabase));
-        menuNumberToActionMap.put(12, new SearchCriteriaUIAction(bookDatabase));
+        menuNumberToActionMap.put(12, new CountAllBooksUIAction(bookDatabase));
+        menuNumberToActionMap.put(13, new SearchCriteriaUIAction(bookDatabase));
     }
 
     public void run() {
@@ -45,7 +46,8 @@ public class BookLibrary {
                         9  = Delete Book
                         10 = Delete By Author
                         11 = Delete By Title
-                        12 = Search criteria
+                        12 = Count all books
+                        13 = Search criteria
                         """);
         Scanner sc = new Scanner(System.in);
 

@@ -9,9 +9,10 @@ import java.util.Scanner;
 class FindByAuthorUIAction implements UIAction {
     private BookDatabase database;
 
-    public FindByAuthorUIAction(BookDatabase database){
+    public FindByAuthorUIAction(BookDatabase database) {
         this.database = database;
     }
+
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);

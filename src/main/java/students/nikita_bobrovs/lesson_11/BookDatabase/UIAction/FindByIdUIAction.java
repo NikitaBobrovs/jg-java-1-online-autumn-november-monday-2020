@@ -12,13 +12,14 @@ class FindByIdUIAction implements UIAction {
     public FindByIdUIAction(BookDatabase bookDatabase) {
         this.bookDatabase = bookDatabase;
     }
+
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter books id : ");
         Long id = scanner.nextLong();
         Optional<Book> bookOpt = bookDatabase.findById(id);
-        if (bookOpt.isPresent()){
+        if (bookOpt.isPresent()) {
             System.out.println(bookOpt.toString());
         } else {
             System.out.println(bookOpt.isEmpty());

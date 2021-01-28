@@ -15,5 +15,4 @@ public class AndSearchCriteria implements SearchCriteria {
     public boolean match(Book book) {
         return (leftCondition.match(book) && rightCondition.match(book));
     }
-
 }

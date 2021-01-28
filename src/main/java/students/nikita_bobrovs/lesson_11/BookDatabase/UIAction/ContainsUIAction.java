@@ -5,7 +5,7 @@ import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
 
 import java.util.Scanner;
 
-class ContainsUIAction implements UIAction{
+class ContainsUIAction implements UIAction {
     private final BookDatabase database;
 
     ContainsUIAction(BookDatabase database) {
@@ -22,8 +22,8 @@ class ContainsUIAction implements UIAction{
         System.out.println("Enter books year of issue : ");
         String yearOfIssue = scanner.next();
 
-        Book book = new Book(author,title,yearOfIssue);
-        if (database.contains(book)){
+        Book book = new Book(author, title, yearOfIssue);
+        if (database.contains(book)) {
             System.out.println("Library contains this book");
         } else {
             System.out.println("Library does not contain this book");

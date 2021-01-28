@@ -8,6 +8,7 @@ class TitleSearchCriteria implements SearchCriteria {
     public TitleSearchCriteria(String titleToSearch) {
         this.titleToSearch = titleToSearch;
     }
+
     @Override
     public boolean match(Book book) {
         return book.getTitle().equals(this.titleToSearch);

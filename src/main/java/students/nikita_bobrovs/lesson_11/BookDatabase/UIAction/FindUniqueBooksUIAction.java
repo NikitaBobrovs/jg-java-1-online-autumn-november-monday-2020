@@ -4,7 +4,7 @@ import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
 
 import java.util.Arrays;
 
-class FindUniqueBooksUIAction implements UIAction{
+class FindUniqueBooksUIAction implements UIAction {
     private final BookDatabase database;
 
     FindUniqueBooksUIAction(BookDatabase database) {

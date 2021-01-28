@@ -1,4 +1,5 @@
 package students.nikita_bobrovs.lesson_11.BookDatabase;
+
 import students.nikita_bobrovs.lesson_11.BookDatabase.SearchCriteria.SearchCriteriaRunner;
 
 import java.util.*;
@@ -9,7 +10,7 @@ public class DatabaseImpl implements BookDatabase {
 
     @Override
     public Long save(Book book) {
-        Book copy = new Book(bookId,book.getAuthor(),book.getTitle(), book.getYearOfIssue());
+        Book copy = new Book(bookId, book.getAuthor(), book.getTitle(), book.getYearOfIssue());
         bookList.add(copy);
         bookId++;
         return copy.getId();

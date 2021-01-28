@@ -23,7 +23,7 @@ class SearchCriteriaUIAction implements UIAction {
         System.out.println("Enter books year of issue : ");
         String yearOfIssue = scanner.next();
 
-        Book book = new Book(author,title,yearOfIssue);
+        Book book = new Book(author, title, yearOfIssue);
 
         System.out.println("""
                 Choose search criteria  :\s

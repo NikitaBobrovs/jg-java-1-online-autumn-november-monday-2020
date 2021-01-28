@@ -5,12 +5,13 @@ import students.nikita_bobrovs.lesson_11.BookDatabase.BookDatabase;
 
 import java.util.Scanner;
 
-class DeleteBookUIAction implements UIAction{
+class DeleteBookUIAction implements UIAction {
     private BookDatabase database;
 
-    DeleteBookUIAction(BookDatabase database){
+    DeleteBookUIAction(BookDatabase database) {
         this.database = database;
     }
+
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
@@ -21,8 +22,8 @@ class DeleteBookUIAction implements UIAction{
         System.out.println("Enter books year of issue : ");
         String yearOfIssue = scanner.next();
 
-        Book book = new Book(author,title,yearOfIssue);
-        if(database.delete(book)){
+        Book book = new Book(author, title, yearOfIssue);
+        if (database.delete(book)) {
             System.out.println("Book deleted successfully");
         } else {
             System.out.println("Failed to find book");
