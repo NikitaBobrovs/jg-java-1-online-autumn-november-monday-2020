@@ -86,6 +86,6 @@ class SearchCriteriaUIAction implements UIAction {
         setSearchCriteriaCreated();
 
         database.find(searchCriteriaCreated.build())
-                .forEach(book1 -> System.out.println(book.toString()));
+                .forEach(book1 -> System.out.println(book1.toString()));
     }
 }
