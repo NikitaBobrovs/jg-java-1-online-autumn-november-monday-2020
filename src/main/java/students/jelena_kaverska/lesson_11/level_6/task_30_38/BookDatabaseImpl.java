@@ -1,8 +1,9 @@
-package students.jelena_kaverska.lesson_11.level_5.task_28_29;
+package students.jelena_kaverska.lesson_11.level_6.task_30_38;
 
 import java.util.*;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 class BookDatabaseImpl implements BookDatabase {
     private List<Book> books = new ArrayList<>();
@@ -14,6 +15,53 @@ class BookDatabaseImpl implements BookDatabase {
         Book copy = new Book(bookId, book.getAuthor(), book.getTitle());
         books.add(copy);
         return bookId;
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+        List<Book> booksByAuthor = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getAuthor().equals(author)) {
+                booksByAuthor.add(book);
+            }
+        }
+        return booksByAuthor;
+    }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        List<Book> booksByTitle = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                booksByTitle.add(book);
+            }
+        }
+        return booksByTitle;
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return books.removeIf(book -> book.getId().equals(id));
+    }
+
+    @Override
+    public boolean delete(Book book) {
+        return books.removeIf(b -> b.equals(book));
+    }
+
+    @Override
+    public int countAllBooks() {
+        return books.size();
     }
 
     @Override
