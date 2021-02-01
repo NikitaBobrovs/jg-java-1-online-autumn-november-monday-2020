@@ -17,13 +17,10 @@ class BankApiImpl implements BankApi {
     public Optional<BankClient> findByUid(UserCredentials credentials, String uid) throws AccessDeniedException {
         if (!credentials.hasRole(Role.CAN_SEARCH_CLIENTS)) {
             throw new AccessDeniedException();
-        } else {
-            for (BankClient client : clients) {
-                if (client.getUid().equals(uid)) {
-                    return Optional.of(client);
-                } else {
-                    return Optional.empty();
-                }
+        }
+        for (BankClient client : clients) {
+            if (client.getUid().equals(uid)) {
+                return Optional.of(client);
             }
         }
         return Optional.empty();
@@ -36,7 +33,7 @@ class My {
                 new BankClient("567", "WWWSSS")));
         UserCredentials credentials = new UserCredentials(List.of(Role.CAN_SEARCH_CLIENTS));
         try {
-            System.out.println(bankApi.findByUid(credentials, "123"));
+            System.out.println(bankApi.findByUid(credentials, "567"));
         } catch (AccessDeniedException e) {
             System.out.println(e.getMessage());
         }

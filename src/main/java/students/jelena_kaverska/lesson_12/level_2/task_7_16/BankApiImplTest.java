@@ -7,7 +7,7 @@ class BankApiImplTest {
     private final BankApi bankApi = new BankApiImpl(List.of(new BankClient("123", "AAA BBBB"),
             new BankClient("987", "QQQ WWW")));
 
-    String printResults(boolean result) {
+    private String printResults(boolean result) {
         return result ? "PASSED" : "FAILED";
     }
 
@@ -23,6 +23,13 @@ class BankApiImplTest {
         Optional<BankClient> exp = Optional.empty();
         Optional<BankClient> act = bankApi.findByUid(credentials, "1234");
         System.out.println("Test find by uid with valid role 1: " + printResults(exp.equals(act)));
+    }
+
+    void testFindByUidWithRightRole2() throws AccessDeniedException {
+        UserCredentials credentials = new UserCredentials(List.of(Role.CAN_SEARCH_CLIENTS, Role.OTHER_ROLE));
+        Optional<BankClient> exp = Optional.of(new BankClient("987", "QQQ WWW"));
+        Optional<BankClient> act = bankApi.findByUid(credentials, "987");
+        System.out.println("Test find by uid with valid role: " + printResults(exp.equals(act)));
     }
 
     void testFindByUidWithInvalidRole() {
@@ -41,5 +48,6 @@ class BankApiImplTest {
         tests.testFindByUidWithRightRole();
         tests.testFindByUidWithRightRole1();
         tests.testFindByUidWithInvalidRole();
+        tests.testFindByUidWithRightRole2();
     }
 }
