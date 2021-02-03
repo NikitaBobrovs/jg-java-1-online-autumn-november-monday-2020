@@ -3,7 +3,7 @@ package students.jelena_kaverska.lesson_12.level_5_6_till_46;
 import java.util.List;
 
 class ProductValidatorImplTest {
-    private ProductValidator validator = new ProductValidatorImpl();
+    private final ProductValidator validator = new ProductValidatorImpl();
 
     private String printResults(boolean result) {
         return result ? "PASSED" : "FAILED";

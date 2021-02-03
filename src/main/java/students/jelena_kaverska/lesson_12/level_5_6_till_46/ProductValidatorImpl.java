@@ -11,20 +11,14 @@ class ProductValidatorImpl implements ProductValidator {
     @Override
     public List<ValidationException> validate(Product product) {
         List<ValidationException> exceptions = new ArrayList<>();
-        try {
-            name.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
-        }
-        try {
-            price.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
-        }
-        try {
-            description.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
+        List<FieldValidationRule> rules = List.of(name, price, description);
+        for (FieldValidationRule rule : rules) {
+            try {
+                rule.validate(product);
+            }
+            catch (ValidationException e) {
+                exceptions.add(e);
+            }
         }
         return exceptions;
     }
