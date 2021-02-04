@@ -1,6 +1,6 @@
 package students.jelena_kaverska.lesson_13.level_1.task_1_8;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
