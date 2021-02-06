@@ -17,6 +17,7 @@ package students.polina_ivashkevich.lesson_7.level_1.task_1;
         }
      }
      boolean stringTester (String expectedResult, String realResult) {
+
          return expectedResult.equals(realResult);
      }
     void mostFrequentWordInArrayTest() {

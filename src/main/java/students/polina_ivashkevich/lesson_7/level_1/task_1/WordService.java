@@ -30,8 +30,7 @@ public class WordService {
         }
         return word;
     }
-    public String  findMostFrequentWordInArray(String text) {
-        return findMostFrequentWordInArray((text));
+    public String  findMostFrequentWordInArray(String text) { return findMostFrequentWordInArray((text));
     }
 }
 
