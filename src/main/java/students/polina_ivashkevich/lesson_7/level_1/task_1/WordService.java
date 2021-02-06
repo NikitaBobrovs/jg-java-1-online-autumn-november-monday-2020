@@ -1,12 +1,12 @@
 package students.polina_ivashkevich.lesson_7.level_1.task_1;
 
 import java.util.Arrays;
-import java.util.Locale;
+
 
 public class WordService {
 
     private String[] findMostFrequentWord(String text) {
-        text = text.toLowerCase(Locale.ROOT);
+        text = text.toLowerCase();
         return text.split("");
 
     }
@@ -30,7 +30,8 @@ public class WordService {
         }
         return word;
     }
-    public String  findMostFrequentWordInArray(String text) { return findMostFrequentWordInArray((text));
+    public String  findMostFrequentWordInArray(String text) {
+        return findMostFrequentWordInArray((text));
     }
 }
 

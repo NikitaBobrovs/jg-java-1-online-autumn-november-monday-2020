@@ -16,9 +16,7 @@ package students.polina_ivashkevich.lesson_7.level_1.task_1;
             return "Fail";
         }
      }
-     boolean stringTester (String expectedResult, String realResult) {
-
-         return expectedResult.equals(realResult);
+     boolean stringTester (String expectedResult, String realResult) { return expectedResult.equals(realResult);
      }
     void mostFrequentWordInArrayTest() {
          String[] test ={ "I go back in my house,because you are not in this house! "};
