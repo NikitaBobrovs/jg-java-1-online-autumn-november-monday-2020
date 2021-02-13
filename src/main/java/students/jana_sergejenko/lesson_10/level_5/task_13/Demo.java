@@ -1,5 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_5.task_13;
 
+import java.util.Optional;
+
 public class Demo {
     public static void main(String[] args) {
         Demo demo = new Demo();
@@ -11,8 +13,6 @@ public class Demo {
         demo.scenario6();
         demo.scenario7();
         demo.scenario8();
-        demo.scenario9();
-        demo.scenario10();
     }
 
     public String checkResult(boolean result, boolean expected) {
@@ -24,6 +24,13 @@ public class Demo {
     }
     public String checkResult2(Book result, Book expected) {
         if (result == expected) {
+            return "Test = OK";
+        } else {
+            return "Test = FAIL";
+        }
+    }
+    public String checkResult3(Optional<Book> result, Optional<Book> expected) {
+        if (result.equals(expected)) {
             return "Test = OK";
         } else {
             return "Test = FAIL";
@@ -108,32 +115,21 @@ public class Demo {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result=test.findByAuthor("Michelle Obama");
-        Book expected=book;
-        System.out.println("Find test" + checkResult2(result, expected));
+        //Book result=test.findByAuthor("Michelle Obama");
+        Optional<Book> result = test.findByAuthor(book.getAuthor());
+        //Book expected=book;
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test" + checkResult3(result, expected));
     }
     public void scenario8() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result=test.findByAuthor("Michelle James");
-        Book expected=null;
-        System.out.println("Find test" + checkResult2(result, expected));
+        //Book result=test.findByAuthor("Michelle James");
+        Optional<Book> result = test.findByAuthor("AAA");
+        //Book expected=null;
+        Optional<Book> expected = Optional.empty();
+        System.out.println("Find test" + checkResult3(result, expected));
     }
-    public void scenario9() {
-        BookReader test = new BookReaderImpl();
-        final Book book = new Book("Becoming", "Michelle Obama");
-        test.save(book);
-        Book result=test.findByAuthor2("Obama");
-        Book expected=book;
-        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
-    }
-    public void scenario10() {
-        BookReader test = new BookReaderImpl();
-        final Book book = new Book("Becoming", "Michelle Obama");
-        test.save(book);
-        Book result=test.findByAuthor2("Michelle Obama");
-        Book expected=book;
-        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
-    }
+
 }

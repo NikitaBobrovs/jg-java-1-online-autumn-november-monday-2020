@@ -1,6 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_5.task_13;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class BookReaderImpl implements BookReader {
     private final Book[] books = new Book[10];
@@ -47,25 +48,14 @@ public class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public Book findByAuthor(String author){
+    public Optional<Book> findByAuthor(String author){
         for(Book book:books){
             if(book != null&&book.getAuthor().equals(author)){
-                return book;
+                return Optional.of(book);
             }
         }
-        return null;
+        return Optional.empty();
     }
-    @Override
-    public Book findByAuthor2(String author){
-        for(Book book:books){
-            if(book != null&&book.getAuthor().contains(author)){
-                return book;
-            }
-        }
-        return null;
-    }
-
-
 
     public static void main(String[] args) {
         BookReader test = new BookReaderImpl();
