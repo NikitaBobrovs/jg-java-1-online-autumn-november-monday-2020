@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_11.task_2;
+package students.jana_sergejenko.lesson_11.level_1.task_1.task_2;
 
 //Коллекции могут хранить любые ссылочные типы данных.
 public class Car {
