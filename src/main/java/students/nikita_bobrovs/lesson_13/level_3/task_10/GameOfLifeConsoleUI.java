@@ -2,8 +2,8 @@ package students.nikita_bobrovs.lesson_13.level_3.task_10;
 
 import java.util.Arrays;
 
-public class GameOfLifeConsoleUI {
-    public void show(boolean[][] field) {
+class GameOfLifeConsoleUI {
+    void show(boolean[][] field) {
         System.out.println(Arrays.deepToString(field)
                 .replace("], ", "]\n")
                 .replace("[[", "[")
