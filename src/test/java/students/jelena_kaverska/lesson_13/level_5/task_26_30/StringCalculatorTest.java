@@ -74,22 +74,14 @@ public class StringCalculatorTest {
     @Test
     public void testMultipleNumbersWithNewLine_2() {
         String numbers = "1\n";
-        try {
-            int act = calculator.add(numbers);
-        }
-        catch (IllegalArgumentException e) {
-            e.getMessage();
-        }
+        assertThatThrownBy(() -> calculator.add(numbers)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     public void testMultipleNumbersWithNewLine_3() {
         String numbers = "\n";
-        try {
-            int act = calculator.add(numbers);
-        }
-        catch (IllegalArgumentException e) {
-            e.getMessage();
-        }
+        int act = calculator.add(numbers);
+        int exp = 0;
+        assertThat(act).isEqualTo(exp);
     }
 }
