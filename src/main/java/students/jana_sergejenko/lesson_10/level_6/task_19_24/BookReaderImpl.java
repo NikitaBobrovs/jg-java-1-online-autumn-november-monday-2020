@@ -1,6 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_6.task_19_24;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class BookReaderImpl implements BookReader {
     private final Book[] books = new Book[10];
@@ -47,7 +48,7 @@ public class BookReaderImpl implements BookReader {
         return false;
     }
 
-    @Override
+   /* @Override
     public Book findByAuthor(String author) {
         for (Book book : books) {
             if (book != null && book.getAuthor().equals(author)) {
@@ -65,9 +66,18 @@ public class BookReaderImpl implements BookReader {
             }
         }
         return null;
-    }
+    }*/
 
-    @Override
+       public Optional<Book> findByAuthor(String author){
+           for(Book book:books){
+               if(book != null&&book.getAuthor().equals(author)){
+                   return Optional.of(book);
+               }
+           }
+           return Optional.empty();
+       }
+
+   /* @Override
     public Book findByTitle(String title) {
         for (Book book : books) {
             if (book != null && book.getTitle().equals(title)) {
@@ -85,7 +95,17 @@ public class BookReaderImpl implements BookReader {
             }
         }
         return null;
+    }*/
+
+    public Optional<Book> findByTitle(String title){
+        for(Book book:books){
+            if(book != null&&book.getTitle().equals(title)){
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
     }
+
 
     @Override
     public boolean setMarkRead(Book book) {

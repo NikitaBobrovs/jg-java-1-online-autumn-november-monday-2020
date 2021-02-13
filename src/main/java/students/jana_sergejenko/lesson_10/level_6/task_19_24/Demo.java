@@ -1,6 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_6.task_19_24;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class Demo {
     public static void main(String[] args) {
@@ -43,6 +44,13 @@ public class Demo {
 
     public String checkResult3(Book[] result, Book[] expected) {
         if (Arrays.toString(result).equals(Arrays.toString(expected))) {
+            return "Test = OK";
+        } else {
+            return "Test = FAIL";
+        }
+    }
+    public String checkResult4(Optional<Book> result, Optional<Book> expected) {
+        if (result.equals(expected)) {
             return "Test = OK";
         } else {
             return "Test = FAIL";
@@ -127,63 +135,65 @@ public class Demo {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByAuthor("Michelle Obama");
-        Book expected = book;
-        System.out.println("Find test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle Obama");
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test 7" + checkResult4(result, expected));
+
     }
 
     public void scenario8() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByAuthor("Michelle James");
-        Book expected = null;
-        System.out.println("Find test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle James");
+        Optional<Book> expected = Optional.empty();
+        System.out.println("Find test 8" + checkResult4(result, expected));
     }
 
     public void scenario9() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByAuthor2("Obama");
-        Book expected = book;
-        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle Obama");
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test 9" + checkResult4(result, expected));
+
     }
 
     public void scenario10() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByAuthor2("Michelle Obama");
-        Book expected = book;
-        System.out.println("Find CONTAINS test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle Obama");
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test 10" + checkResult4(result, expected));
     }
 
     public void scenario11() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByTitle("Becoming");
-        Book expected = book;
-        System.out.println("Find by title test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle Obama");
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test 11" + checkResult4(result, expected));
     }
 
     public void scenario12() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        Book result = test.findByTitle("Becoming true");
-        Book expected = null;
-        System.out.println("Find by title test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Becoming true");
+        Optional<Book> expected = Optional.empty();
+        System.out.println("Find test 12" + checkResult4(result, expected));
     }
 
     public void scenario13() {
         BookReader test = new BookReaderImpl();
         final Book book = new Book("Becoming tur person", "Michelle Obama");
         test.save(book);
-        Book result = test.findByTitle2("Becoming");
-        Book expected = book;
-        System.out.println("Find by Title CONTAINS test" + checkResult2(result, expected));
+        Optional<Book> result = test.findByAuthor("Michelle Obama");
+        Optional<Book> expected = Optional.of(book);
+        System.out.println("Find test 13" + checkResult4(result, expected));
     }
 
     public void scenario14() {
