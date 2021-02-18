@@ -58,6 +58,8 @@ Please, follow next steps in order to publish your homework for personal review:
 * [Q&A 1](https://www.youtube.com/watch?v=t8DkcwtMC5s)
 * [Lesson 12](https://www.youtube.com/watch?v=ZvknfJysMTY)
 * [Lesson 13](https://www.youtube.com/watch?v=pm6ze19FoGo)
+* [Lesson 14](https://www.youtube.com/watch?v=_AmuZ1Ja2w8)
+* [Lesson 15](https://www.youtube.com/watch?v=l3gtcz2IbWg)
 
 ## Books
 
