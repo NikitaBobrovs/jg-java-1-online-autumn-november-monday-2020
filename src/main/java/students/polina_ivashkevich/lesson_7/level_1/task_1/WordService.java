@@ -1,41 +1,55 @@
 package students.polina_ivashkevich.lesson_7.level_1.task_1;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 
-public class WordService {
+class WordService {
 
-    private String[] findMostFrequentWord(String text) {
-        text = text.toLowerCase();
-        return text.split("");
-
-    }
-    String mostFrequentWordInArray(String [] text) {
-        Arrays.sort(text);
-        int max = 0;
-        int count = 1;
-        String word = "";
-
-        for (int i = 1; i < text.length; i++) {
-            if(text[i].equals(text[0])) {
-                count++;
-            } else {
-              count = 1;
-              text[0] = text[i];
-            }
-            if (max<count) {
-                max = count;
-                word = text[i];
-            }
+public String findMostFrequentWord(String text) {
+        String[] words = text.split(",\\s*| ");
+        Map<String, Integer> map;
+    map = new HashMap<>();
+    for (String word : words) {
+        if (map.containsKey(word)) {
+        map.put(word, map.get(word) + 1);
+        } else {
+        map.put(word, 1);
         }
-        return word;
-    }
-    public String  findMostFrequentWordInArray(String text) {
-        return findMostFrequentWordInArray((text));
+        }
+        String frequentWord = " ";
+        Integer fr = 0;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+        if (entry.getValue() > fr) {
+        fr = entry.getValue();
+        frequentWord = entry.getKey();
+        }
+        }
+        return frequentWord;
+        }
+
+public String findMostFrequentWord1(String text) {
+        Map<String, Long> map = Arrays.stream(text.split(",\\s*| "))
+        .collect(groupingBy(Function.identity(), counting()));
+        return map.entrySet().stream()
+        .max((e1, e2) -> e1.getValue().compareTo(e2.getValue()))
+        .map(entry -> entry.getKey())
+        .get();
+        }
+        }
+
+class My {
+    public static void main(String[] args) {
+        WordService w = new WordService();
+        System.out.println(w.findMostFrequentWord("Lorem, text,Ipsum,is,simply,dummy,text,Lorem,industry,text, Lorem, text"));
+        System.out.println(w.findMostFrequentWord1("Lorem, text,Ipsum,is,simply,dummy,text,Lorem,industry,text, Lorem, text"));
     }
 }
-
-
 
 
 
