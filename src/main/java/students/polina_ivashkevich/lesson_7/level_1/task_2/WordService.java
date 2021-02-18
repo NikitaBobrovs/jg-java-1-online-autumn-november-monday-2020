@@ -1,63 +1,55 @@
 package students.polina_ivashkevich.lesson_7.level_1.task_2;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+
 public class WordService {
 
 
-    public String findMostFrequentWord(String text){
-          return (String) movie();
-    }
-
-
-
-    public Object movie() {
-        String film[]=new String[5];
-
-        film[0]="Romeo and Julietta";
-        film[1]="Pirate of the Caribbean";
-        film[2]="Romeo and Julietta";
-        film[3]="Once Upon a Time in Hollywood";
-        film[4]="Romeo and Julietta";
-        String text="Romeo and Julietta";
-        film.equals(text);
-        switch (text) {
-            case "Romeo and Julietta": {
-
-
+        public String findMostFrequentWord(String text) {
+            String[] words = text.split(",\\s*| ");
+            Map<String, Integer> map = new HashMap<>();
+            for (String word : words) {
+                if (map.containsKey(word)) {
+                    map.put(word, map.get(word) + 1);
+                } else {
+                    map.put(word, 1);
+                }
             }
-            case "Pirate of the Caribbean": {
-
-
+            String frequentWord = " ";
+            Integer fr = 0;
+            for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > fr) {
+                    fr = entry.getValue();
+                    frequentWord = entry.getKey();
+                }
             }
-            case "Once Upon a Time in Hollywood": {
-                break;
-            }
+            return frequentWord;
         }
-        System.out.println(text);
 
-        return text;
-    }
-
-    public String find() {
-        String film = new String();
-        film.equals(film);
-        switch (film) {
-            case "Romeo and Julietta": {
-                System.out.println(film);
-
-            }
-            case "Pirate of the Caribbean": {
-
-
-            }
-            case "Once Upon a Time in Hollywood": {
-                break;
-            }
+        public String findMostFrequentWord1(String text) {
+            Map<String, Long> map = Arrays.stream(text.split(",\\s*| "))
+                    .collect(groupingBy(Function.identity(), counting()));
+            return map.entrySet().stream()
+                    .max((e1, e2) -> e1.getValue().compareTo(e2.getValue()))
+                    .map(entry -> entry.getKey())
+                    .get();
         }
-        System.out.println(film);
-
-        return film;
     }
-}
+
+    class My {
+        public static void main(String[] args) {
+            WordService w = new WordService();
+            System.out.println(w.findMostFrequentWord("Lorem, text,Ipsum,is,simply,dummy,text,Lorem,industry,text, Lorem, text"));
+            System.out.println(w.findMostFrequentWord1("Lorem, text,Ipsum,is,simply,dummy,text,Lorem,industry,text, Lorem, text"));
+        }
+    }
+
 
 
 
