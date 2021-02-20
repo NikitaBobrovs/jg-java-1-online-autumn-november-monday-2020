@@ -35,7 +35,7 @@ class TransactionAnalysisServiceTest {
                 new Transaction(new Trader("Alan","Cambridge"), 2013, 950),
                 new Transaction(new Trader("Raoul", "Cambridge"), 2012, 1000));
         assertThat(transactions)
-                .isEqualTo(transactionAnalysisService.sortTransactions(testData,new SortByValueLowToHighPredicate()));
+                .isEqualTo(transactionAnalysisService.sortTransactions(testData,new SortByValueLowToHighComparator()));
     }
 
     @Test
@@ -48,7 +48,7 @@ class TransactionAnalysisServiceTest {
                 new Transaction(new Trader("Raoul", "Cambridge"), 2011, 400),
                 new Transaction(new Trader("Brian","Cambridge"), 2011, 300));
         assertThat(transactions)
-                .isEqualTo(transactionAnalysisService.sortTransactions(testData,new SortByValueHighToLowPredicate()));
+                .isEqualTo(transactionAnalysisService.sortTransactions(testData,new SortByValueHighToLowComparator()));
     }
 
     @Test

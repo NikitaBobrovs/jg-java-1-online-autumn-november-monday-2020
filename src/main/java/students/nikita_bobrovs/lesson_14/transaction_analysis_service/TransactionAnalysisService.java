@@ -1,5 +1,6 @@
 package students.nikita_bobrovs.lesson_14.transaction_analysis_service;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -13,12 +14,14 @@ class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
-    List<Transaction> sortTransactions(List<Transaction> transactions, SortTransactionsPredicate predicate) {
-        return predicate.sort(transactions);
+    List<Transaction> sortTransactions(List<Transaction> transactions, Comparator<Transaction> comparator) {
+        return transactions.stream()
+                .sorted(comparator)
+                .collect(Collectors.toList());
     }
 
     List<Transaction> sortTransactionsLowToHighOfSetYear(List<Transaction> transactions, int year) {
-        return sortTransactions(findTransactionsByYear(transactions, year), new SortByValueLowToHighPredicate());
+        return sortTransactions(findTransactionsByYear(transactions, year), new SortByValueLowToHighComparator());
     }
 
     List<Integer> getAllTransactionYears(List<Transaction> transactions){
