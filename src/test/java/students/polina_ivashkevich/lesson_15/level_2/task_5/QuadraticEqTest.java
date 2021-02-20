@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class QuadraticEqTest {
     private final QuadraticEq eq = new QuadraticEq();
 
-
     @Test
     void testDiscriminantPositive() {
         double a = 1;
