@@ -1,6 +1,7 @@
 package students.jana_sergejenko.lesson_10.level_5.task_13;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class BookReaderImpl implements BookReader {
     private final Book[] books = new Book[10];
@@ -31,21 +32,53 @@ public class BookReaderImpl implements BookReader {
         }
         return false;
     }
+    @Override
+    public boolean delete(Book book) {
+        int i = 0;
+        for (i = 0; i < books.length; i++) {
+            if (findByTitleAndAuthor(book.getTitle(), book.getAuthor())) {
+                books[i] = null;
+                return true;
+            }
+            break;
 
+        }
+
+        return false;
+    }
+
+    @Override
+    public Optional<Book> findByAuthor(String author){
+        for(Book book:books){
+            if(book != null&&book.getAuthor().equals(author)){
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
+    }
 
     public static void main(String[] args) {
         BookReader test = new BookReaderImpl();
         Book book = new Book("Becoming", "Michelle Obama");
         test.save(book);
-        test.printAll();
-        Book book1 = new Book("Becoming", "Michelle Obama");
+        Book book1 = new Book("One way", "Michelle Obama");
         test.save(book1);
         test.printAll();
+        test.delete(book);
+        test.printAll();
+        System.out.println(test.findByAuthor("Michelle Obama"));
+        System.out.println(test.findByAuthor("Michelle James"));
+
+        /*test.printAll();
         Book book2 = new Book("American Grown", "James Green");
         test.save(book2);
         test.printAll();
         Book book3 = new Book("One way", "James Green");
         test.save(book3);
         test.printAll();
+        Book book4 = new Book("Becoming", "Michelle Obama");
+        test.delete(book);
+        System.out.println(test.findByTitleAndAuthor("Becoming", "Michelle Obama"));
+        test.printAll();*/
     }
 }
