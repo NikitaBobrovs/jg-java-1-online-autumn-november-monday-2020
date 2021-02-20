@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_10.level_5.task_13;
+package students.jana_sergejenko.lesson_10.level_6.task_19_24;
 
 import java.util.Optional;
 
@@ -13,4 +13,13 @@ public interface BookReader {
 
     Optional<Book> findByAuthor(String author);
 
+    Optional<Book> findByTitle(String title);
+
+    boolean setMarkRead(Book book);
+
+    boolean setMarkNotRead(Book book);
+
+    Book allRead();
+
+    Book allNotRead();
 }
