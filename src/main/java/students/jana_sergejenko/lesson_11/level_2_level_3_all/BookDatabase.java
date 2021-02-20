@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_11.level_2.task_6;
+package students.jana_sergejenko.lesson_11.level_2_level_3_all;
 
 import java.util.List;
 import java.util.Optional;

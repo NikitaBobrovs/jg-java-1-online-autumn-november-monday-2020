@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_11.level_2.task_6;
+package students.jana_sergejenko.lesson_11.level_2_level_3_all;
 
 import java.util.Objects;
 
@@ -6,10 +6,22 @@ class Book {
     private Long id;
     private String title;
     private String author;
+    public String yearOfIssue;
 
     Book(String author, String title) {
         this.author = author;
         this.title = title;
+    }
+    public Book(String author, String title,String yearOfIssue) {
+        this.author = author;
+        this.title = title;
+        this.yearOfIssue=yearOfIssue;
+    }
+    public String getYearOfIssue(){
+       return yearOfIssue;
+    }
+    public void setYearOfIssue(String year){
+        this.yearOfIssue=year;
     }
 
     public void setId(Long id) {

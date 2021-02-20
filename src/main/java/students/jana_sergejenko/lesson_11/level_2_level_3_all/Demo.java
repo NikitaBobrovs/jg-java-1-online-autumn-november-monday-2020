@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_11.level_2.task_6;
+package students.jana_sergejenko.lesson_11.level_2_level_3_all;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +16,7 @@ public class Demo {
         test.countAllBooks();
         test.deleteAuthor();
         test.deleteByTitle();
+
 
     }
 
@@ -155,4 +156,5 @@ public class Demo {
         System.out.println(expected);
         System.out.println(result);
     }
+
 }
