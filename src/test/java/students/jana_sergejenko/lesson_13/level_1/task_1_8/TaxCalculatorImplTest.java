@@ -1,12 +1,12 @@
 package students.jana_sergejenko.lesson_13.level_1.task_1_8;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class TaxCalculatorImplTest {
+class TaxCalculatorImplTest {
 
     private TaxCalculator taxCalculator = new TaxCalculatorImpl();
 
@@ -36,5 +36,4 @@ public class TaxCalculatorImplTest {
         var taxToPay = taxCalculator.calculateTax(income);
         assertEquals(taxToPay, new BigDecimal("9000.00"));
     }
-
 }
