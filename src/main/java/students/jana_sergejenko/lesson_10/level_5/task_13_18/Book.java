@@ -16,7 +16,6 @@ public class Book {
     public String getAuthor() {
         return this.author;
     }
-
     @Override
     public String toString() {
         return "Book{" +
