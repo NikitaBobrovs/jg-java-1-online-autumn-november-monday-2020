@@ -1,4 +1,4 @@
-package students.jana_sergejenko.lesson_11.task_5;
+package students.jana_sergejenko.lesson_11.level_1.task_1.task_5;
 
 public class Book {
     private String title;
