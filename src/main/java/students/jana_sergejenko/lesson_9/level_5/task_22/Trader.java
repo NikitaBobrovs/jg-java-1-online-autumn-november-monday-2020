@@ -1,6 +1,6 @@
 package students.jana_sergejenko.lesson_9.level_5.task_22;
 
-class Trader {
+public class Trader {
 
     private String fullName;
     private String city;
