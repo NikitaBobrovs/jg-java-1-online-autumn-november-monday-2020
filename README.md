@@ -83,4 +83,6 @@ Please, follow next steps in order to publish your homework for personal review:
 
 ## Feedback
 
-* [Course Feedback](https://forms.gle/LNgWNYE2iTn8mgQK9)
+* [Course Feedback - Intermediate](https://forms.gle/LNgWNYE2iTn8mgQK9)
+* [Course Feedback - Final](https://forms.gle/4HLo22yDJtDvLpL29)
+* [Facebook](https://www.facebook.com/JavaGuruLV/reviews)
